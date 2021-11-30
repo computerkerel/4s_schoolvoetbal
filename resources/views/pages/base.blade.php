@@ -4,7 +4,9 @@
 <body>
 
 	<main>
-		<div class="wrapper"></div>
+		<div class="wrapper">
+			@yield('content')
+		</div>
 	</main>
 
 	<footer>
