@@ -7,11 +7,11 @@ use Illuminate\Http\Request;
 class PageController extends Controller
 {
  public function welcome(){
-     return view('welcome');
+     return view('pages/welcome');
  }
 
  public  function dashboard(){
-     return view('dashboard');
+     return view('pages/dashboard');
  }
 
 
