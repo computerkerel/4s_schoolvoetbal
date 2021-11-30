@@ -14,10 +14,8 @@ use App\Http\Controllers\PageController;
 |
 */
 
-Route::get('/welcome', [PageController::class,'welcome'])->name('welcome');
+Route::get('/', [PageController::class, 'home'])->name('home');
 
+Route::get('/dashboard', [PageController::class, 'dashboard'])->name('dashboard');
 
-
-Route::get('/dashboard', [PageController::class,'dashboard'])->name('dashboard');
-
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

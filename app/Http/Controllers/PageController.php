@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
- public function welcome(){
-     return view('pages/welcome');
+ public function home(){
+     return view('pages/home');
  }
 
  public  function dashboard(){
