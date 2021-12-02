@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/welcome', [\App\Http\Controllers\PageController::class,'welcome'])->name('welcome');
+Route::get('/', [\App\Http\Controllers\PageController::class,'welcome'])->name('welcome');
 
 
 
 Route::get('/dashboard', [\App\Http\Controllers\PageController::class,'dashboard'])->name('dashboard');
+
+Route::get('/teams', [\App\Http\Controllers\PageController::class,'teams'])->name('teams');
+
+Route::get('/wedstrijden', [\App\Http\Controllers\PageController::class,'wedstrijden'])->name('wedstrijden');
 
 require __DIR__.'/auth.php';
