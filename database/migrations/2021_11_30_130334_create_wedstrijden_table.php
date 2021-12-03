@@ -25,6 +25,8 @@ class CreateWedstrijdenTable extends Migration
             $table->foreignId('team2')
                 ->references('id')
                 ->on('teams');
+            $table->string('scheidsrechter');
+             $table->string('locatie');
             $table->timestamps();
         });
     }

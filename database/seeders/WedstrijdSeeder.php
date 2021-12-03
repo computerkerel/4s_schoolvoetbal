@@ -21,8 +21,10 @@ class WedstrijdSeeder extends Seeder
         $wedstrijd-> title = "4s schoolvoetbal vs fc Breda";
         $wedstrijd-> team1 =  1;
         $wedstrijd-> team2 =  2;
-        $wedstrijd-> score_team1 =  2;
-        $wedstrijd-> score_team2 =  1;
+        $wedstrijd-> score_team1 =  1;
+        $wedstrijd-> score_team2 =  3;
+        $wedstrijd-> locatie =  'nac station';
+        $wedstrijd-> scheidsrechter = 'Danny Makkelie';
         $wedstrijd-> status = "Fc Breda heeft gewonen";
         $wedstrijd -> save();
 
@@ -30,8 +32,10 @@ class WedstrijdSeeder extends Seeder
         $wedstrijd-> title = "4s schoolvoetbal vs fc Breda";
         $wedstrijd-> team1 =  1;
         $wedstrijd-> team2 =  2;
-        $wedstrijd-> score_team1 =  1;
+        $wedstrijd-> score_team1 =  4;
         $wedstrijd-> score_team2 =  2;
+        $wedstrijd-> locatie =  'dorst station';
+        $wedstrijd-> scheidsrechter = ' Bas Nijhuis';
         $wedstrijd-> status = "4s schoolvoetbal heeft gewonen";
         $wedstrijd -> save();
 
