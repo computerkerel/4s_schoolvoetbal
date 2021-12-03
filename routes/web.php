@@ -14,7 +14,7 @@ use App\Http\Controllers\PageController;
 |
 */
 
-Route::get('/', [\App\Http\Controllers\PageController::class,'welcome'])->name('welcome');
+Route::get('/', [\App\Http\Controllers\PageController::class,'home'])->name('home');
 
 Route::get('/dashboard', [PageController::class, 'dashboard'])->name('dashboard');
 
