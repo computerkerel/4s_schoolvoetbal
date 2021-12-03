@@ -1,24 +1,31 @@
 
-wedstrijden
+@extends('pages.base')
 
-@foreach($wedstrijden as $wedstrijd)
-
-    <table>
-        <thead>
-        <tr>
-            <th>{{$wedstrijd->title}}</th>
-            <th>{{$wedstrijd->score}}</th>
-            <th>{{$wedstrijd->status}}</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-           <td> {{$wedstrijd->title}}</td>
-            <td> {{$wedstrijd->score}}</td>
-            <td> {{$wedstrijd->status}}</td>
-        </tr>
-        </tbody>
-    </table>
+@section('content')
 
 
-@endforeach
+
+
+        <div class="container">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Title</th>
+                    <th scope="col">score</th>
+                    <th scope="col">status</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($wedstrijden as $wedstrijd)
+                    <tr>
+                        <td>{{$wedstrijd->title}}</td>
+                        <td>{{$wedstrijd->score_team1}}-{{$wedstrijd->score_team2}}</td>
+                        <td>{{$wedstrijd->status}}</td>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
+        </div>
+
+@endsection
+

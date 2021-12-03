@@ -1,21 +1,28 @@
+@extends('pages.base')
+
+@section('content')
 
 
-@foreach($teams as $team)
-
-    <table>
-        <thead>
-        <tr>
-            <th>{{$team->name}}</th>
-            <th>{{$team->team}}</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>{{$team->name}}</td>
-            <td>{{$team->team}}</td>
-        </tr>
-        </tbody>
-    </table>
 
 
-@endforeach
+   <div class="container">
+       <table class="table">
+           <thead>
+           <tr>
+               <th scope="col">Name</th>
+               <th scope="col">Team</th>
+           </tr>
+           </thead>
+           <tbody>
+           @foreach($teams as $team)
+           <tr>
+               <td>{{$team->name}}</td>
+               <td>{{$team->team}}</td>
+           </tr>
+           @endforeach
+           </tbody>
+       </table>
+   </div>
+
+@endsection
+
