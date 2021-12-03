@@ -18,7 +18,7 @@ class PageController extends Controller
     {
         return view('pages/dashboard');
     }
-    
+
     public function teams()
     {
         $teams = Team::all();

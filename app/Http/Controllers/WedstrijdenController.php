@@ -10,12 +10,13 @@ class WedstrijdenController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * //     * @return \Illuminate\Http\Response
      */
     public function index()
     {
         $wedstrijden = Wedstrijd::all();
-        return view('pages/wedstrijden')->with(['wedstrijden' => $wedstrijden]);
+        return view('admin.wedstrijden.index')
+            ->with(['wedstrijden' => $wedstrijden]);
     }
 
     /**
