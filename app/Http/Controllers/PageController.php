@@ -9,23 +9,27 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
- public function home(){
-     return view('pages/home');
- }
-
- public  function dashboard(){
-     return view('pages/dashboard');
- }
-
-
-    public  function teams(){
-        $teams = Team::all();
-        return view('pages/teams') -> with(['teams' => $teams]);
+    public function home()
+    {
+        return view('pages/home');
     }
 
-    public  function wedstrijden(){
+    public function dashboard()
+    {
+        return view('pages/dashboard');
+    }
+
+
+    public function teams()
+    {
+        $teams = Team::all();
+        return view('pages/teams')->with(['teams' => $teams]);
+    }
+
+    public function wedstrijden()
+    {
         $wedstrijden = Wedstrijd::all();
-        return view('pages/wedstrijden') -> with(['wedstrijden' => $wedstrijden]);
+        return view('pages/wedstrijden')->with(['wedstrijden' => $wedstrijden]);
     }
 
 }
