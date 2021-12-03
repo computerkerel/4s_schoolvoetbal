@@ -15,9 +15,16 @@ class CreateWedstrijdenTable extends Migration
     {
         Schema::create('wedstrijden', function (Blueprint $table) {
             $table->id();
-            $table->integer('score');
-            $table->text('title');
+            $table->integer('score_team1')->nullable();
+            $table->integer('score_team2') ->nullable();
+            $table->string('title');
             $table->text('status');
+            $table->foreignId('team1')
+                ->references('id')
+                ->on('teams');
+            $table->foreignId('team2')
+                ->references('id')
+                ->on('teams');
             $table->timestamps();
         });
     }

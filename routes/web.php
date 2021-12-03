@@ -14,8 +14,15 @@ use App\Http\Controllers\PageController;
 |
 */
 
-Route::get('/', [PageController::class, 'home'])->name('home');
+Route::get('/', [\App\Http\Controllers\PageController::class,'welcome'])->name('welcome');
 
 Route::get('/dashboard', [PageController::class, 'dashboard'])->name('dashboard');
 
-require __DIR__ . '/auth.php';
+
+Route::get('/dashboard', [\App\Http\Controllers\PageController::class,'dashboard'])->name('dashboard');
+
+Route::get('/teams', [\App\Http\Controllers\PageController::class,'teams'])->name('teams');
+
+Route::get('/wedstrijden', [\App\Http\Controllers\PageController::class,'wedstrijden'])->name('wedstrijden');
+
+require __DIR__.'/auth.php';
