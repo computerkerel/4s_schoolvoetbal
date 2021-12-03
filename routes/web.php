@@ -25,6 +25,6 @@ Route::group(['prefix' => 'admin'], function () {
 
 Route::get('/teams', [PageController::class, 'teams'])->name('teams');
 
-Route::get('/wedstrijden', [PageController::class, 'wedstrijden'])->name('wedstrijden');
+//Route::get('/wedstrijden', [PageController::class, 'wedstrijden'])->name('wedstrijden');
 
 require __DIR__ . '/auth.php';
