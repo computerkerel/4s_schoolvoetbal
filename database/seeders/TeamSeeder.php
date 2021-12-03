@@ -32,5 +32,10 @@ class TeamSeeder extends Seeder
         $team -> name = "sam";
         $team -> team = "Fc Roosendaal";
         $team -> save();
+
+        $team = new Team();
+        $team -> name = "jorjan";
+        $team -> team = "Fc Dorst";
+        $team -> save();
     }
 }
