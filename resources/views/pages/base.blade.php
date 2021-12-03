@@ -2,7 +2,6 @@
 <html lang="nl">
 @include('fragments.header')
 <body>
-
 	<main>
 		<div class="wrapper">
 			@yield('content')
@@ -10,7 +9,7 @@
 	</main>
 
 	<footer>
-
+		@include('fragments.footer')
 	</footer>
 </body>
 </html>

@@ -6,9 +6,9 @@
 		</button>
 		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 			<div class="navbar-nav">
-				<a class="nav-link active" aria-current="page" href="#">Home</a>
-				<a class="nav-link" href="#">Wedstrijden</a>
-				<a class="nav-link" href="#">Teams</a>
+				<a class="nav-link @if(request()->is('/')) active @endif" aria-current="page" href="#">Home</a>
+				<a class="nav-link @if(request()->is('/wedstrijden')) active @endif" href="#">Wedstrijden</a>
+				<a class="nav-link @if(request()->is('/teams')) active @endif" href="#">Teams</a>
 			</div>
 		</div>
 	</div>
