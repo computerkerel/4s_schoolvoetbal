@@ -18,23 +18,23 @@ class TeamSeeder extends Seeder
 
 
         $team = new Team();
-        $team -> ingeschreven_door = "ibrahim";
-        $team -> team = "Fc Breda";
-        $team -> save();
+        $team->ingeschreven_door = "Ibrahim";
+        $team->teamnaam = "FC Breda";
+        $team->save();
 
         $team = new Team();
-        $team -> ingeschreven_door = "Noor";
-        $team -> teamnaam = "Fc Tilburg";
-        $team -> save();
+        $team->ingeschreven_door = "Noor";
+        $team->teamnaam = "FC Tilburg";
+        $team->save();
 
         $team = new Team();
-        $team -> ingeschreven_door = "sam";
-        $team -> teamnaam = "Fc Roosendaal";
-        $team -> save();
+        $team->ingeschreven_door = "Sam";
+        $team->teamnaam = "FC Roosendaal";
+        $team->save();
 
         $team = new Team();
-        $team -> ingeschreven_door = "jorjan";
-        $team -> teamnaam = "Fc Dorst";
-        $team -> save();
+        $team->ingeschreven_door = "Jorjan";
+        $team->teamnaam = "FC Dorst";
+        $team->save();
     }
 }
