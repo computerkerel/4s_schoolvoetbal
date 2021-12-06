@@ -19,17 +19,10 @@ class PageController extends Controller
         return view('pages/dashboard');
     }
 
-
     public function teams()
     {
         $teams = Team::all();
         return view('pages/teams')->with(['teams' => $teams]);
-    }
-
-    public function wedstrijden()
-    {
-        $wedstrijden = Wedstrijd::all();
-        return view('pages/wedstrijden')->with(['wedstrijden' => $wedstrijden]);
     }
 
 }
