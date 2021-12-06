@@ -24,7 +24,15 @@
                         <td>{{$wedstrijd->score_team1}}-{{$wedstrijd->score_team2}}</td>
                         <td>{{$wedstrijd->locatie}}</td>
                         <td>{{$wedstrijd->scheidsrechter}}</td>
-                        <td>{{$wedstrijd->status}}</td>
+
+                        @if($wedstrijd->score_team1 > $wedstrijd->score_team2)
+                           <td> <p>{{$wedstrijd->team1}} heeft gewonnen</p></td>
+                        @else
+                          <td>  <p>Team2 heeft gewonnen</p></td>
+
+                            @elseif()
+                                <td>  <p>Gelijkspel</p></td>
+                            @endif
 
                     </tr>
                 @endforeach
