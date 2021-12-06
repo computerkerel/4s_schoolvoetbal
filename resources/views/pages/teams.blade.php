@@ -16,8 +16,8 @@
            <tbody>
            @foreach($teams as $team)
            <tr>
-               <td>{{$team->name}}</td>
-               <td>{{$team->team}}</td>
+               <td>{{$team->ingeschreven_door}}</td>
+               <td>{{$team->teamnaam}}</td>
            </tr>
            @endforeach
            </tbody>
