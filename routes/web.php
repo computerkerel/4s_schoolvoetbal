@@ -19,7 +19,7 @@ Route::get('/', [PageController::class, 'home'])->name('home');
 
 Route::get('/dashboard', [PageController::class, 'dashboard'])->name('dashboard');
 
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::resource('wedstrijden', WedstrijdenController::class);
 });
 
