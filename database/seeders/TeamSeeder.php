@@ -11,7 +11,6 @@ class TeamSeeder extends Seeder
     /**
      * Run the database seeds.
      *
-
      * @return void
      */
     public function run()
@@ -19,23 +18,23 @@ class TeamSeeder extends Seeder
 
 
         $team = new Team();
-        $team -> name = "ibrahim";
-        $team -> team = "Fc Breda";
-        $team -> save();
+        $team->name = "Ibrahim";
+        $team->team = "FC Breda";
+        $team->save();
 
         $team = new Team();
-        $team -> name = "Noor";
-        $team -> team = "Fc Tilburg";
-        $team -> save();
+        $team->name = "Noor";
+        $team->team = "FC Tilburg";
+        $team->save();
 
         $team = new Team();
-        $team -> name = "sam";
-        $team -> team = "Fc Roosendaal";
-        $team -> save();
+        $team->name = "Sam";
+        $team->team = "FC Roosendaal";
+        $team->save();
 
         $team = new Team();
-        $team -> name = "jorjan";
-        $team -> team = "Fc Dorst";
-        $team -> save();
+        $team->name = "Jorjan";
+        $team->team = "FC Dorst";
+        $team->save();
     }
 }
