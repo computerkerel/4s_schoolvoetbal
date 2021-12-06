@@ -11,5 +11,21 @@
 				<a class="nav-link @if(request()->is('admin/teams')) active @endif" href="#">Teams</a>
 			</div>
 		</div>
+		@guest
+		<div class="d-flex navbar-nav">
+			<a href="{{route('register')}}" class="nav-link">Registreren</a>
+			<a href="{{route('login')}}" class="nav-link">Inloggen</a>
+		</div>
+		@endguest
+
+		@auth
+			<div class="d-flex navbar-nav">
+				<form action="{{route('logout')}}" method="POST">
+					@csrf
+					<a href="{{route('logout')}}" onclick="event.preventDefault();
+					   this.closest('form').submit();">Uitloggen</a>
+				</form>
+			</div>
+		@endauth
 	</div>
 </nav>
