@@ -22,7 +22,7 @@
 			<div class="d-flex navbar-nav">
 				<form action="{{route('logout')}}" method="POST">
 					@csrf
-					<a href="{{route('logout')}}" onclick="event.preventDefault();
+					<a href="{{route('logout')}}" class="nav-link" onclick="event.preventDefault();
 					   this.closest('form').submit();">Uitloggen</a>
 				</form>
 			</div>
