@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Team;
-use App\Models\Wedstrijd;
+use App\Models\Match;
 use Illuminate\Http\Request;
 
 class PageController extends Controller

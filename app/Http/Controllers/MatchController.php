@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Wedstrijd;
+use App\Models\Match;
 use Illuminate\Http\Request;
 
-class WedstrijdenController extends Controller
+class MatchController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class WedstrijdenController extends Controller
      */
     public function index()
     {
-        $wedstrijden = Wedstrijd::all();
+        $wedstrijden = Match::all();
         return view('admin.wedstrijden.index')
-            ->with(['wedstrijden' => $wedstrijden]);
+            ->with(compact('wedstrijden'));
     }
 
     /**
