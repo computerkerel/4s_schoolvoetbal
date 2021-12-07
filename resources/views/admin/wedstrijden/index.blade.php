@@ -28,6 +28,7 @@
 				@endforeach
 			</tbody>
 		</table>
+		<a href="{{route('wedstrijden.create')}}" class="btn btn-primary"><i class="bi bi-plus-square"></i> Nieuwe wedstrijd</a>
 	</div>
 @endsection
 
