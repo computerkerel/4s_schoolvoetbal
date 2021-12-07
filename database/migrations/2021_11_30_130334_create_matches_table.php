@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateWedstrijdenTable extends Migration
+class CreateMatchesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,23 +13,24 @@ class CreateWedstrijdenTable extends Migration
      */
     public function up()
     {
-        Schema::create('wedstrijden', function (Blueprint $table) {
+        Schema::create('matches', function (Blueprint $table) {
             $table->id();
             $table->integer('score_team1')->nullable();
-            $table->integer('score_team2') ->nullable();
+            $table->integer('score_team2')->nullable();
             $table->string('title');
             $table->text('status');
-            $table->foreignId('team1')
+
+            $table->foreignId('team1_id')
                 ->references('id')
                 ->on('teams');
 
-            $table->foreignId('team2')
+            $table->foreignId('team2_id')
                 ->references('id')
                 ->on('teams');
 
             $table->dateTime('datum');
             $table->string('scheidsrechter');
-             $table->string('locatie');
+            $table->string('locatie');
             $table->timestamps();
         });
     }
