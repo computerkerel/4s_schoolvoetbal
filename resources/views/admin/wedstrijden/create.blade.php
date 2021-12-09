@@ -42,8 +42,7 @@
 
 				<div class="mb-3 col-5">
 					<label for="team2" class="form-label">Team 2</label>
-					<select name="team2" id="team2" class="form-select" onchange="checkOptions(this.value, this.dataset.select)"
-					        data-select="1">
+					<select name="team2" id="team2" class="form-select">
 						<option value="" selected disabled>-- Team --</option>
 						@foreach($teams as $team)
 							@if(old('team2') == $team->id)
