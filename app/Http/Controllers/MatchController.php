@@ -62,7 +62,8 @@ class MatchController extends Controller
             return back();
         }
         else {
-            return redirect()->route('wedstrijden.index');
+            return redirect()->route('wedstrijden.index')->with('msg', 'Wedstrijd Aangemaakt');
+
         }
 
     }
@@ -109,6 +110,7 @@ class MatchController extends Controller
      */
     public function destroy($id)
     {
-        //
+          Match::destroy($id);
+        return redirect()->route('wedstrijden.index')->with('msg', 'Wedstrijd Verwijderd');
     }
 }
