@@ -23,6 +23,7 @@
 			<div class="col-md-6 h-100">
 				<div class="border px-3 bg-light">
 					<h2>Welkom</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci aliquam aut dicta distinctio ducimus, eius enim eos error ex explicabo facere facilis id, illo labore libero maiores nesciunt nisi non nulla numquam quo repellat, sequi similique voluptatem. Consequatur illum ipsum minima non quidem recusandae tenetur. Aliquid consequatur cum, esse est excepturi incidunt ipsam, libero minus numquam officiis rem vel vero? Consequatur dolore dolorum id omnis quaerat sint sunt tenetur. A amet animi asperiores assumenda atque delectus dicta dolor, dolores doloribus error et impedit ipsam, itaque laborum mollitia nemo neque officia pariatur placeat porro quos sit sunt ut? Beatae, non?</p>
 				</div>
 			</div>
 		</div>
