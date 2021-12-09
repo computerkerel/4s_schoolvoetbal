@@ -11,7 +11,9 @@ class PageController extends Controller
 {
     public function home()
     {
-        return view('pages/home');
+        $wedstrijden = Match::all()->sortBy("datum",);
+        return view('pages/home')->with(['wedstrijden'=>$wedstrijden]);
+
     }
 
     public function dashboard()
