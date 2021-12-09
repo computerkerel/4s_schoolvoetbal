@@ -25,6 +25,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
 Route::get('/teams', [PageController::class, 'teams'])->name('teams');
 
+Route::get('/events', [MatchController::class, 'index'])->name('events');
+
 //Route::get('/wedstrijden', [PageController::class, 'wedstrijden'])->name('wedstrijden');
 
 require __DIR__ . '/auth.php';
