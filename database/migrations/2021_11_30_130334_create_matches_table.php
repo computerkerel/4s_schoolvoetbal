@@ -18,7 +18,7 @@ class CreateMatchesTable extends Migration
             $table->integer('score_team1')->nullable();
             $table->integer('score_team2')->nullable();
             $table->string('title');
-            $table->text('status');
+            $table->text('status')->nullable();
 
             $table->foreignId('team1_id')
                 ->references('id')
