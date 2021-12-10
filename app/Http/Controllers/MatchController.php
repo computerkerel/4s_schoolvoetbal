@@ -89,7 +89,10 @@ class MatchController extends Controller
      */
     public function edit($id)
     {
-        //
+        $wedstrijd = Match::findOrFail($id);
+        $teams = Team::all();
+        return view('admin.wedstrijden.edit')
+            ->with(['wedstrijd' => $wedstrijd, 'teams' => $teams]);
     }
 
     /**
