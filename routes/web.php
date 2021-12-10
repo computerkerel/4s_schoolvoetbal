@@ -28,7 +28,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::resource('teams', TeamController::class);
 });
 
-Route::get('/teams', [PageController::class, 'teams'])->name('teams');
+Route::get('/teams', [TeamController::class, 'index'])->name('teams');
 
 Route::get('/events', [MatchController::class, 'index'])->name('events');
 
