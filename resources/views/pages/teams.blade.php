@@ -17,7 +17,8 @@
 			<tbody>
 				@foreach($teams as $team)
 					<tr>
-						<td>{{$team->teamnaam}}</td>
+						<td>
+							<a href="{{route('teams.show', $team->id)}}">{{$team->teamnaam}}</a></td>
 						<td>{{$team->ingeschreven_door}}</td>
 					</tr>
 				@endforeach
