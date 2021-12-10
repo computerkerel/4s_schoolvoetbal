@@ -11,6 +11,7 @@
 				<a class="nav-link @if(request()->is('admin/teams')) active @endif" href="{{route("teams")}}">Teams</a>
 			</div>
 		</div>
+
 		@guest
 		<div class="d-flex navbar-nav">
 			<a href="{{route('register')}}" class="nav-link">Registreren</a>
