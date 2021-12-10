@@ -37,7 +37,19 @@ class TeamController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'teamnaam' => 'required',
+            'ingeschreven_door' => 'required'
+        ]);
+
+        $team = new Team();
+        $team->teamnaam = $request->teamnaam;
+        $team->ingeschreven_door = $request->ingeschreven_door;
+        $team->save();
+
+        return redirect()->route('teams.index')
+            ->with('success', 'Team succesvol aangemaakt');
+
     }
 
     /**
