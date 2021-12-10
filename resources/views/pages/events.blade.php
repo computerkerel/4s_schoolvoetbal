@@ -3,6 +3,8 @@
 @section('content')
 	<div class="container">
 
+		<h1>Wedstrijden</h1>
+
 		@include('fragments.flash-message')
 
 		<table class="table">

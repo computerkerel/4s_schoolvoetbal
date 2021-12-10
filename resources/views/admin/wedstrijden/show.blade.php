@@ -20,5 +20,4 @@
 			<input type="submit" class="btn btn-danger" value="Verwijderen">
 		</form>
 	</div>
-	</div>
 @endsection
