@@ -10,7 +10,7 @@
 		<table class="table">
 			<thead>
 				<tr>
-					<th>Name</th>
+					<th>Ingeschreven door</th>
 					<th>Team</th>
 				</tr>
 			</thead>
