@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use \App\Http\Controllers\MatchController;
+use \App\Http\Controllers\TeamController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,10 @@ Route::get('/dashboard', [PageController::class, 'dashboard'])->name('dashboard'
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::resource('wedstrijden', MatchController::class);
+});
+
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
+    Route::resource('teams', TeamController::class);
 });
 
 Route::get('/teams', [PageController::class, 'teams'])->name('teams');
