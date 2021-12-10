@@ -58,13 +58,7 @@ class MatchController extends Controller
         $wedstrijd->locatie = $request->locatie;
         $wedstrijd->save();
 
-        if(isset($errors)){
-            return back();
-        }
-        else {
-            return redirect()->route('wedstrijden.index');
-        }
-
+        return redirect()->route('wedstrijden.index');
     }
 
     /**
