@@ -130,6 +130,9 @@ class MatchController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $wedstrijd = Match::destroy($id);
+
+        return redirect()->route('wedstrijden.index')
+            ->with('success', 'Wedstrijd succesvol verwijderd');
     }
 }
