@@ -75,7 +75,10 @@ class MatchController extends Controller
      */
     public function show($id)
     {
-        //
+        $wedstrijd = Match::findOrFail($id);
+//        $teams = Team::all();
+        return view('admin.wedstrijden.show')
+            ->with(['wedstrijd' => $wedstrijd]);
     }
 
     /**
