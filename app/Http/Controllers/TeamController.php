@@ -73,7 +73,10 @@ class TeamController extends Controller
      */
     public function edit($id)
     {
-        //
+        $team = Team::findOrFail($id);
+
+        return view('admin.teams.edit')
+            ->with(compact('team'));
     }
 
     /**
