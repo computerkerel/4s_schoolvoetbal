@@ -11,7 +11,7 @@ class PageController extends Controller
 {
     public function home()
     {
-        $wedstrijden = Match::all()->sortBy("datum",);
+        $wedstrijden = Match::take(2)->orderBy("datum", 'desc')->get();
         return view('pages/home')->with(['wedstrijden'=>$wedstrijden]);
 
     }
