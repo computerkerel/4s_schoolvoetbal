@@ -30,7 +30,7 @@
 						<td>{{$wedstrijd->team2->teamnaam}}</td>
 						<td>{{$wedstrijd->score_team1}}-{{$wedstrijd->score_team2}}</td>
 						<td>{{$wedstrijd->locatie}}</td>
-						<td>{{$wedstrijd->datum}}</td>
+						<td>{{date('d-m-Y', strtotime($wedstrijd->datum))}}</td>
 						<td>{{$wedstrijd->scheidsrechter}}</td>
 						<td>{{$wedstrijd->status}}</td>
 					</tr>
