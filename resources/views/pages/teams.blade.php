@@ -6,7 +6,7 @@
 
 
    <div class="container">
-       <table class="table">
+       <table class="table table">
            <thead>
            <tr>
                <th scope="col">Name</th>
@@ -22,6 +22,7 @@
            @endforeach
            </tbody>
        </table>
+       <img src="https://source.unsplash.com/user/erondu/1300x400">
    </div>
 
 @endsection
