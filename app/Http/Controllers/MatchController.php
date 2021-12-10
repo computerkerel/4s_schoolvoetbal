@@ -108,7 +108,7 @@ class MatchController extends Controller
             'locatie' => 'required'
         ]);
 
-        $wedstrijd = new Match();
+        $wedstrijd = Match::findOrFail($id);
         $wedstrijd->title = $request->title;
         $wedstrijd->team1_id = $request->team1;
         $wedstrijd->team2_id = $request->team2;
