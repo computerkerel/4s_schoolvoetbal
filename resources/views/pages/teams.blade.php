@@ -10,15 +10,15 @@
 		<table class="table">
 			<thead>
 				<tr>
-					<th>Ingeschreven door</th>
 					<th>Team</th>
+					<th>Ingeschreven door</th>
 				</tr>
 			</thead>
 			<tbody>
 				@foreach($teams as $team)
 					<tr>
-						<td>{{$team->ingeschreven_door}}</td>
 						<td>{{$team->teamnaam}}</td>
+						<td>{{$team->ingeschreven_door}}</td>
 					</tr>
 				@endforeach
 			</tbody>
