@@ -2,6 +2,9 @@
 
 @section('content')
 	<div class="container">
+
+		@include('fragments.flash-message')
+
 		<table class="table">
 			<thead>
 				<tr>
