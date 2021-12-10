@@ -58,7 +58,8 @@ class MatchController extends Controller
         $wedstrijd->locatie = $request->locatie;
         $wedstrijd->save();
 
-        return redirect()->route('wedstrijden.index');
+        return redirect()->route('wedstrijden.index')
+            ->with('success', 'Wedstrijd succesvol aangemaakt');
     }
 
     /**
