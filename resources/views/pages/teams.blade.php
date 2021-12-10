@@ -23,6 +23,9 @@
 				@endforeach
 			</tbody>
 		</table>
+		@auth()
+			<a href="{{route('teams.create')}}" class="btn btn-primary"><i class="bi bi-plus-square"></i> Nieuw team</a>
+		@endauth
 		<img src="https://source.unsplash.com/user/erondu/1300x400">
 	</div>
 
