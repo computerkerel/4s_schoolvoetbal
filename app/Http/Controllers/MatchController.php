@@ -98,7 +98,28 @@ class MatchController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required',
+            'team1' => 'required',
+            'team2' => 'required|different:team1',
+            'datum' => 'required|date',
+            'scheidsrechter' => 'required',
+            'locatie' => 'required'
+        ]);
+
+        $wedstrijd = new Match();
+        $wedstrijd->title = $request->title;
+        $wedstrijd->team1_id = $request->team1;
+        $wedstrijd->team2_id = $request->team2;
+        $wedstrijd->datum = $request->datum;
+        $wedstrijd->scheidsrechter = $request->scheidsrechter;
+        $wedstrijd->locatie = $request->locatie;
+        $wedstrijd->status = $request->status;
+        $wedstrijd->save();
+
+
+        return redirect()->route('wedstrijden.index');
+
     }
 
     /**
