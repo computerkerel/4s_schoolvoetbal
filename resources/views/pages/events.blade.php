@@ -17,7 +17,11 @@
 			<tbody>
 				@foreach($wedstrijden as $wedstrijd)
 					<tr>
-						<td>{{$wedstrijd->team1->teamnaam}}</td>
+						<td>
+							<a href="{{route('wedstrijden.show', $wedstrijd->id)}}">
+								{{$wedstrijd->team1->teamnaam}}
+							</a>
+						</td>
 						<td>{{$wedstrijd->team2->teamnaam}}</td>
 						<td>{{$wedstrijd->score_team1}}-{{$wedstrijd->score_team2}}</td>
 						<td>{{$wedstrijd->locatie}}</td>
