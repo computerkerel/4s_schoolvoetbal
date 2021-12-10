@@ -110,6 +110,9 @@ class TeamController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $team = Team::destroy($id);
+
+        return redirect()->route('teams.index')
+            ->with('success', 'Team succesvol verwijderd');
     }
 }
