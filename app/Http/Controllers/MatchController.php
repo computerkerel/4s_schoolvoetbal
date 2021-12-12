@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Match;
 use App\Models\Team;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class MatchController extends Controller
@@ -28,8 +29,9 @@ class MatchController extends Controller
     public function create()
     {
         $teams = Team::all();
+        $users = User::all();
         return view('admin.wedstrijden.create')
-            ->with(['teams' => $teams]);
+            ->with(['teams' => $teams, 'users' => $users]);
     }
 
     /**
@@ -54,7 +56,7 @@ class MatchController extends Controller
         $wedstrijd->team1_id = $request->team1;
         $wedstrijd->team2_id = $request->team2;
         $wedstrijd->datum = $request->datum;
-        $wedstrijd->scheidsrechter = $request->scheidsrechter;
+        $wedstrijd->scheidsrechter_id = $request->scheidsrechter;
         $wedstrijd->locatie = $request->locatie;
         $wedstrijd->save();
 
@@ -86,8 +88,9 @@ class MatchController extends Controller
     {
         $wedstrijd = Match::findOrFail($id);
         $teams = Team::all();
+        $users = User::all();
         return view('admin.wedstrijden.edit')
-            ->with(['wedstrijd' => $wedstrijd, 'teams' => $teams]);
+            ->with(['wedstrijd' => $wedstrijd, 'teams' => $teams, 'users' => $users]);
     }
 
     /**
@@ -113,7 +116,7 @@ class MatchController extends Controller
         $wedstrijd->team1_id = $request->team1;
         $wedstrijd->team2_id = $request->team2;
         $wedstrijd->datum = $request->datum;
-        $wedstrijd->scheidsrechter = $request->scheidsrechter;
+        $wedstrijd->scheidsrechter_id = $request->scheidsrechter;
         $wedstrijd->locatie = $request->locatie;
         $wedstrijd->status = $request->status;
         $wedstrijd->save();

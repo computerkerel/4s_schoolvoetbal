@@ -63,7 +63,16 @@
 
 			<div class="mb-3">
 				<label for="scheidsrechter" class="form-label">Scheidsrechter</label>
-				<input type="text" class="form-control" name="scheidsrechter" id="scheidsrechter" value="{{old('scheidsrechter')}}">
+				<select name="scheidsrechter" id="scheidsrechter" class="form-select">
+					<option value="" selected disabled>-- Scheidsrechter --</option>
+					@foreach($users as $user)
+						@if(old('scheidsrechter') == $user->id)
+							<option value="{{$user->id}}" selected>{{$user->name}}</option>
+						@else
+							<option value="{{$user->id}}">{{$user->name}}</option>
+						@endif
+					@endforeach
+				</select>
 			</div>
 
 			<div class="mb-3">
