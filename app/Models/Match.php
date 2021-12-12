@@ -20,4 +20,9 @@ class Match extends Model
         return $this->belongsTo(Team::class, 'team2_id');
 
     }
+
+    public function scheidsrechter()
+    {
+        return $this->belongsTo(User::class, 'scheidsrechter_id');
+    }
 }

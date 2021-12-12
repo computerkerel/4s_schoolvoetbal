@@ -23,7 +23,7 @@ class MatchSeeder extends Seeder
         $wedstrijd->score_team2 = 3;
         $wedstrijd->locatie = 'NAC Stadion';
         $wedstrijd->datum = '2021-12-20 18:00:00';
-        $wedstrijd->scheidsrechter = 'Danny Makkelie';
+        $wedstrijd->scheidsrechter_id = 1;
         $wedstrijd->status = "FC Breda heeft gewonen";
         $wedstrijd->save();
 
@@ -35,7 +35,7 @@ class MatchSeeder extends Seeder
         $wedstrijd->score_team2 = 2;
         $wedstrijd->locatie = 'Dorst Stadion';
         $wedstrijd->datum = '2022-1-19 18:00:00';
-        $wedstrijd->scheidsrechter = ' Bas Nijhuis';
+        $wedstrijd->scheidsrechter_id = 2;
         $wedstrijd->status = "4S Schoolvoetbal heeft gewonen";
         $wedstrijd->save();
 

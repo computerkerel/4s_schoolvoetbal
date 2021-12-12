@@ -31,7 +31,11 @@ class CreateMatchesTable extends Migration
                 ->onDelete('cascade');
 
             $table->dateTime('datum');
-            $table->string('scheidsrechter');
+
+            $table->foreignId('scheidsrechter_id')
+                ->references('id')
+                ->on('users');
+
             $table->string('locatie');
             $table->timestamps();
         });
