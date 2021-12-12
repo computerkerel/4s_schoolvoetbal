@@ -22,11 +22,13 @@ class CreateMatchesTable extends Migration
 
             $table->foreignId('team1_id')
                 ->references('id')
-                ->on('teams');
+                ->on('teams')
+                ->onDelete('cascade');
 
             $table->foreignId('team2_id')
                 ->references('id')
-                ->on('teams');
+                ->on('teams')
+                ->onDelete('cascade');
 
             $table->dateTime('datum');
             $table->string('scheidsrechter');
