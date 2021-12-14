@@ -95,7 +95,9 @@
 			</div>
 
 			<div class="mb-3">
-				<input type="submit" class="btn btn-primary" value="Opslaan">
+				<input type="submit" class="btn btn-primary" value="Opslaan" id="update-match">
+			</div>
+
 			</div>
 
 		</form>
