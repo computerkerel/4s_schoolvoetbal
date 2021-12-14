@@ -52,7 +52,8 @@
 			<div class="row">
 				<div class="mb-3 col-5">
 					<label for="score_team1" class="form-label">Score team 1</label>
-					<input type="number" class="form-control" name="score_team1" id="score_team1">
+					<input type="number" class="form-control" name="score_team1" id="score_team1"
+					       @if($wedstrijd->is_bewerkt) readonly @endif value="{{$wedstrijd->score_team1}}">
 				</div>
 
 				<div class="d-flex justify-content-center align-items-center mb-3 col-2 pt-4 px-auto">
@@ -61,7 +62,8 @@
 
 				<div class="mb-3 col-5">
 					<label for="score_team2" class="form-label">Score team 2</label>
-					<input type="number" class="form-control" name="score_team2" id="score_team2">
+					<input type="number" class="form-control" name="score_team2" id="score_team2"
+					       @if($wedstrijd->is_bewerkt) readonly @endif value="{{$wedstrijd->score_team2}}">
 				</div>
 			</div>
 
@@ -96,7 +98,8 @@
 			</div>
 
 			<div class="mb-3">
-				<input type="submit" onclick="return checkScores()" class="btn btn-primary" value="Opslaan" id="update-match">
+				<input type="submit" onclick="return checkScores()" class="btn btn-primary" value="Opslaan"
+				       id="update-match">
 			</div>
 
 			<!-- Modal -->
