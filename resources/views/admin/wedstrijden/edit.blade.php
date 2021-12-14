@@ -46,12 +46,28 @@
 						@endforeach
 					</select>
 				</div>
+			</div>
 
-				<div class="mb-3">
-					<label for="datum" class="form-label">Datum</label>
-					<input type="date" class="form-control" name="datum" id="datum" value="{{date('Y-m-d', strtotime($wedstrijd->datum))}}">
+			<div class="row">
+				<div class="mb-3 col-5">
+					<label for="score_team1" class="form-label">Score team 1</label>
+					<input type="number" class="form-control" name="score_team1" id="score_team1">
 				</div>
 
+				<div class="d-flex justify-content-center align-items-center mb-3 col-2 pt-4 px-auto">
+					<span class="text-center">-</span>
+				</div>
+
+				<div class="mb-3 col-5">
+					<label for="score_team2" class="form-label">Score team 2</label>
+					<input type="number" class="form-control" name="score_team2" id="score_team2">
+				</div>
+			</div>
+
+			<div class="mb-3">
+				<label for="datum" class="form-label">Datum</label>
+				<input type="date" class="form-control" name="datum" id="datum"
+				       value="{{date('Y-m-d', strtotime($wedstrijd->datum))}}">
 			</div>
 
 			<div class="mb-3">
