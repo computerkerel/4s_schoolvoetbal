@@ -98,6 +98,25 @@
 				<input type="submit" class="btn btn-primary" value="Opslaan" id="update-match">
 			</div>
 
+			<!-- Modal -->
+			<div class="modal fade" id="updateScoresModal" tabindex="-1" aria-labelledby="updateScoresModal"
+			     aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="updateScoresModalLabel">Scores updaten?</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body">
+							<p>De uitslag kan maar &eacute;&eacute;n keer ingevuld worden.</p>
+							<p><strong>Weet je het zeker?</strong></p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuleren</button>
+							<button type="button" class="btn btn-primary">Opslaan</button>
+						</div>
+					</div>
+				</div>
 			</div>
 
 		</form>
