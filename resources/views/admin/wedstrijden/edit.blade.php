@@ -133,8 +133,10 @@
         let modal = new bootstrap.Modal(document.getElementById('updateScoresModal'))
         let trigger = document.getElementById('update-match');
 
+        let isEdited = {{json_encode($wedstrijd->is_bewerkt)}};
+
         function checkScores() {
-            if (scoreTeam1Field.value || scoreTeam2Field.value) {
+            if ((scoreTeam1Field.value || scoreTeam2Field.value) && !isEdited) {
                 console.log('hoi');
 
                 modal.show();
