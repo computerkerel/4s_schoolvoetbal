@@ -119,6 +119,13 @@ class MatchController extends Controller
         $wedstrijd->scheidsrechter_id = $request->scheidsrechter;
         $wedstrijd->locatie = $request->locatie;
         $wedstrijd->status = $request->status;
+
+        if((isset($request->score_team1) || isset($request->score_team2)) && !$wedstrijd->is_bewerkt){
+            $wedstrijd->is_bewerkt = true;
+            $wedstrijd->score_team1 = $request->score_team1;
+            $wedstrijd->score_team2 = $request->score_team2;
+        }
+
         $wedstrijd->save();
 
 
