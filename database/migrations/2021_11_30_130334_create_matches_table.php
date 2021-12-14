@@ -36,6 +36,8 @@ class CreateMatchesTable extends Migration
                 ->references('id')
                 ->on('users');
 
+            $table->boolean('is_bewerkt')->default(0);
+
             $table->string('locatie');
             $table->timestamps();
         });
