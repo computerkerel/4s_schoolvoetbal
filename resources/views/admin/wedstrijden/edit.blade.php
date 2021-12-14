@@ -121,4 +121,27 @@
 
 		</form>
 	</div>
+
+	<script>
+        let scoreTeam1Field = document.getElementById('score_team1');
+        let scoreTeam2Field = document.getElementById('score_team2');
+
+        let modal = new bootstrap.Modal(document.getElementById('updateScoresModal'))
+        let trigger = document.getElementById('update-match');
+
+        function checkScores() {
+            if (scoreTeam1Field.value || scoreTeam2Field.value) {
+                console.log('hoi');
+
+                modal.show();
+
+                trigger.focus()
+                event.preventDefault();
+                return true;
+            } else {
+                return true;
+            }
+        }
+
+	</script>
 @endsection
