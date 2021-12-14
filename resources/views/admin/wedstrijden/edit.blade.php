@@ -6,7 +6,8 @@
 
 		@include('fragments.flash-message')
 
-		<form action="{{route('wedstrijden.update', $wedstrijd->id)}}" method="POST" class="w-50 mx-auto">
+		<form action="{{route('wedstrijden.update', $wedstrijd->id)}}" onsubmit="return checkScores()" method="POST"
+		      class="w-50 mx-auto">
 			@csrf
 			@method('PUT')
 			<div class="mb-3">
