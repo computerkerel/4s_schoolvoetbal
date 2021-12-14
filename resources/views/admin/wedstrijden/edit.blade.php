@@ -6,7 +6,7 @@
 
 		@include('fragments.flash-message')
 
-		<form action="{{route('wedstrijden.update', $wedstrijd->id)}}" onsubmit="return checkScores()" method="POST"
+		<form action="{{route('wedstrijden.update', $wedstrijd->id)}}" method="POST"
 		      class="w-50 mx-auto">
 			@csrf
 			@method('PUT')
@@ -96,7 +96,7 @@
 			</div>
 
 			<div class="mb-3">
-				<input type="submit" class="btn btn-primary" value="Opslaan" id="update-match">
+				<input type="submit" onclick="return checkScores()" class="btn btn-primary" value="Opslaan" id="update-match">
 			</div>
 
 			<!-- Modal -->
@@ -114,7 +114,7 @@
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuleren</button>
-							<button type="button" class="btn btn-primary">Opslaan</button>
+							<button type="submit" class="btn btn-primary">Opslaan</button>
 						</div>
 					</div>
 				</div>
