@@ -16,7 +16,7 @@ class CreateTeamsTable extends Migration
         Schema::create('teams', function (Blueprint $table) {
             $table->id();
             $table->text('ingeschreven_door');
-            $table->text('teamnaam');
+            $table->string('teamnaam')->unique();
             $table->timestamps();
         });
     }
