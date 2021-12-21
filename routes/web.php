@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use \App\Http\Controllers\MatchController;
 use \App\Http\Controllers\TeamController;
+use \App\Http\Controllers\PlayerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::resource('teams', TeamController::class);
 });
+
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
+    Route::resource('players', PlayerController::class);
+});
+
+Route::post('/players/{team}', [PlayerController::class, 'store'])->name('players.store');
 
 Route::get('/teams', [TeamController::class, 'index'])->name('teams');
 
