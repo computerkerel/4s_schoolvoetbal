@@ -36,6 +36,24 @@ class PlayerController extends Controller
      */
     public function store(Request $request, $teamId)
     {
+        $players = Team::findOrFail($teamId)->players;
+
+        $this->validate($request, [
+            'naam' => 'required'
+        ]);
+
+        if ($players->count() < 11) {
+            $player = new Player();
+            $player->naam = $request->naam;
+            $player->team_id = $teamId;
+            $player->save();
+
+            return redirect()->route('teams.edit', $teamId)
+                ->with('success', 'Speler succesvol toegevoegd');
+        }
+        else {
+            return back()->with('danger', 'Team heeft al 11 spelers');
+        }
     }
 
     /**
