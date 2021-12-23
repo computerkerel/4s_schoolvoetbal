@@ -124,7 +124,18 @@
 			</div>
 
 		</form>
+
+        <form action="{{route('fields.update')}}" method="'post">
+            <div class="form-group">
+                <input type="text" name="field">
+                <div class="mb-3">
+                    <input type="submit" class="btn btn-primary" value="Opslaan">
+                </div>
+            </div>
+        </form>
 	</div>
+
+
 
 	<script>
         let scoreTeam1Field = document.getElementById('score_team1');
