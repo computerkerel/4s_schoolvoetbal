@@ -1,0 +1,7 @@
+.delete-player {
+    visibility: hidden;
+}
+
+.player-row:hover > .delete-player {
+    visibility: visible;
+}

@@ -46,9 +46,9 @@
 					</thead>
 					<tbody>
 						@foreach($team->players as $player)
-							<tr>
-								<td>{{$player->naam}}</td>
-								<td>
+							<tr class="player-row">
+								<td class="align-middle player-name">{{$player->naam}}</td>
+								<td class="delete-player">
 									<form action="{{route('players.destroy', $player->id)}}">
 										@csrf
 										@method('DELETE')
