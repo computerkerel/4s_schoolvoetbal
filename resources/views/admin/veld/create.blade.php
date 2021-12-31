@@ -2,7 +2,7 @@
 
 @section('content')
 	<div class="container">
-		<h1>Nieuwe wedstrijd</h1>
+		<h1>Nieuw veld</h1>
 
 		@include('fragments.flash-message')
 
