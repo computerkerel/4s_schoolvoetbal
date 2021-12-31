@@ -88,8 +88,17 @@
 			</div>
 
 			<div class="mb-3">
-				<label for="locatie" class="form-label">Locatie</label>
-				<input type="text" class="form-control" name="locatie" id="locatie" value="{{$wedstrijd->locatie}}">
+				<label for="veld" class="form-label">veld</label>
+				<select name="veld" id="veld" class="form-select">
+					<option value="" selected disabled>-- Veld --</option>
+					@foreach($fields as $field)
+						@if($wedstrijd->field->id == $field->id)
+							<option value="{{$field->id}}" selected>{{$field->naam}}</option>
+						@else
+							<option value="{{$field->id}}">{{$field->naam}}</option>
+						@endif
+					@endforeach
+				</select>
 			</div>
 
 			<div class="mb-3">
