@@ -91,8 +91,9 @@ class MatchController extends Controller
         $wedstrijd = Match::findOrFail($id);
         $teams = Team::all();
         $users = User::all();
+        $fields = Field::all();
         return view('admin.wedstrijden.edit')
-            ->with(['wedstrijd' => $wedstrijd, 'teams' => $teams, 'users' => $users]);
+            ->with(['wedstrijd' => $wedstrijd, 'teams' => $teams, 'users' => $users, 'fields' => $fields]);
     }
 
     /**
