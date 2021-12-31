@@ -50,7 +50,7 @@ class MatchController extends Controller
             'team2' => 'required|different:team1',
             'datum' => 'required|date',
             'scheidsrechter' => 'required',
-            'locatie' => 'required'
+            'veld' => 'required'
         ]);
 
         $wedstrijd = new Match();
@@ -59,7 +59,7 @@ class MatchController extends Controller
         $wedstrijd->team2_id = $request->team2;
         $wedstrijd->datum = $request->datum;
         $wedstrijd->scheidsrechter_id = $request->scheidsrechter;
-        $wedstrijd->field_id = $request->locatie;
+        $wedstrijd->field_id = $request->veld;
         $wedstrijd->save();
 
         return redirect()->route('wedstrijden.index')
