@@ -21,7 +21,7 @@ class MatchSeeder extends Seeder
         $wedstrijd->team2_id = 2;
         $wedstrijd->score_team1 = 1;
         $wedstrijd->score_team2 = 3;
-        $wedstrijd->locatie = 'NAC Stadion';
+        $wedstrijd->field_id = 1;
         $wedstrijd->datum = '2021-12-20 18:00:00';
         $wedstrijd->scheidsrechter_id = 1;
         $wedstrijd->status = "FC Breda heeft gewonen";
@@ -33,7 +33,7 @@ class MatchSeeder extends Seeder
         $wedstrijd->team2_id = 2;
         $wedstrijd->score_team1 = 4;
         $wedstrijd->score_team2 = 2;
-        $wedstrijd->locatie = 'Dorst Stadion';
+        $wedstrijd->field_id = 2;
         $wedstrijd->datum = '2022-1-19 18:00:00';
         $wedstrijd->scheidsrechter_id = 2;
         $wedstrijd->status = "4S Schoolvoetbal heeft gewonen";

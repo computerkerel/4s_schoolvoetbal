@@ -12,6 +12,8 @@
 		<p><strong>Scheidsrechter:</strong> {{$wedstrijd->scheidsrechter->name}}</p>
 		<p><strong>Status:</strong> {{$wedstrijd->status}}</p>
 
+        <p><strong>Status:</strong> {{$wedstrijd->fields}}</p>
+
 		<a href="{{route('wedstrijden.edit', $wedstrijd->id)}}" class="btn btn-info">Aanpassen</a>
 
 		<form action="{{route('wedstrijden.destroy', $wedstrijd->id)}}" method="POST">

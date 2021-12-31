@@ -57,7 +57,7 @@ class MatchController extends Controller
         $wedstrijd->team2_id = $request->team2;
         $wedstrijd->datum = $request->datum;
         $wedstrijd->scheidsrechter_id = $request->scheidsrechter;
-        $wedstrijd->locatie = $request->locatie;
+        $wedstrijd->field_id = $request->locatie;
         $wedstrijd->save();
 
         return redirect()->route('wedstrijden.index')

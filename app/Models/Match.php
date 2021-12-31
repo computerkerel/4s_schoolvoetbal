@@ -25,4 +25,9 @@ class Match extends Model
     {
         return $this->belongsTo(User::class, 'scheidsrechter_id');
     }
+
+    public  function field()
+    {
+        return $this->hasOne(Field::class,'field_id');
+    }
 }

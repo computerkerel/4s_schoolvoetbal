@@ -38,7 +38,11 @@ class CreateMatchesTable extends Migration
 
             $table->boolean('is_bewerkt')->default(0);
 
-            $table->string('locatie');
+            $table->foreignId('field_id')
+            ->references('id')
+            ->on('fields')
+                ->onUpdate('cascade');
+
             $table->timestamps();
         });
     }

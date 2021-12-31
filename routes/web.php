@@ -5,7 +5,7 @@ use App\Http\Controllers\PageController;
 use \App\Http\Controllers\MatchController;
 use \App\Http\Controllers\TeamController;
 use \App\Http\Controllers\PlayerController;
-
+use \App\Http\Controllers\FieldController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,10 +35,19 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
 Route::post('/players/{team}', [PlayerController::class, 'store'])->name('players.store');
 
+
+
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
+    Route::resource('fields', FieldController::class);
+});
+
+route::get('/fields',[FieldController::class, 'index'])
+    ->name('fields');
+
 Route::get('/teams', [TeamController::class, 'index'])->name('teams');
 
 Route::get('/events', [MatchController::class, 'index'])->name('events');
 
-//Route::get('/wedstrijden', [PageController::class, 'wedstrijden'])->name('wedstrijden');
+
 
 require __DIR__ . '/auth.php';
