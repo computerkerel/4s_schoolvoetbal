@@ -28,6 +28,6 @@ class Match extends Model
 
     public  function field()
     {
-        return $this->hasOne(Field::class,'field_id');
+        return $this->belongsTo(Field::class,'field_id');
     }
 }
