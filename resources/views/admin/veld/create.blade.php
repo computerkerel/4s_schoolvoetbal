@@ -4,15 +4,7 @@
 	<div class="container">
 		<h1>Nieuwe wedstrijd</h1>
 
-		@if ($errors->any())
-			<div class="alert alert-danger">
-				<ul>
-					@foreach ($errors->all() as $error)
-						<li>{{ $error }}</li>
-					@endforeach
-				</ul>
-			</div>
-		@endif
+		@include('fragments.flash-message')
 
 		<form action="{{route('fields.store')}}" method="post">
 			@csrf
