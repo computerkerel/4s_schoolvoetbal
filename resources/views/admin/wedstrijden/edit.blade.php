@@ -134,14 +134,20 @@
 
 		</form>
 
-        <form action="{{route('fields.update')}}" method="'post">
-            <div class="form-group">
-                <input type="text" name="field">
-                <div class="mb-3">
-                    <input type="submit" class="btn btn-primary" value="Opslaan">
-                </div>
-            </div>
-        </form>
+		<div>
+			<h2>Veld aanpassen</h2>
+			<form action="{{route('fields.update', $wedstrijd->field->id)}}" class="w-50 mx-auto" method="POST">
+				@method('PUT')
+				@csrf
+				<div class="mb-3">
+					<label for="naam" class="form-label">Veldnaam</label>
+					<input type="text" class="form-control" name="naam" value="{{$wedstrijd->field->naam}}">
+					<div class="mb-3">
+						<input type="submit" class="btn btn-primary" value="Opslaan">
+					</div>
+				</div>
+			</form>
+		</div>
 	</div>
 
 
