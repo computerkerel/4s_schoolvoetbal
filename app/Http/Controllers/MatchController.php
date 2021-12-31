@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Field;
 use App\Models\Match;
 use App\Models\Team;
 use App\Models\User;
@@ -30,8 +31,9 @@ class MatchController extends Controller
     {
         $teams = Team::all();
         $users = User::all();
+        $fields = Field::all();
         return view('admin.wedstrijden.create')
-            ->with(['teams' => $teams, 'users' => $users]);
+            ->with(['teams' => $teams, 'users' => $users, 'fields' => $fields]);
     }
 
     /**
