@@ -52,7 +52,7 @@ class FieldController extends Controller
 
         $fields = new Field();
         $fields->naam = $request->naam;
-        $fields->aangemaakt_door = Auth::user()->id;
+        $fields->aangemaakt_door_id = Auth::user()->id;
         $fields->save();
 
         return redirect()->route('fields.index')
@@ -103,7 +103,7 @@ class FieldController extends Controller
 
         $fields = Field::findOrFail($id);
         $fields->naam = $request->naam;
-        $fields->aangemaakt_door = Auth::user()->id;
+        $fields->aangemaakt_door_id = Auth::user()->id;
         $fields->save();
 
         return redirect()->route('fields.index')
