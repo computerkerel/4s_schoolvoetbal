@@ -3,6 +3,7 @@
 @section('content')
 	<div class="container">
 		<h1>Team aanpassen</h1>
+		<hr>
 
 		@include('fragments.flash-message')
 
@@ -31,7 +32,7 @@
 				</form>
 			</div>
 
-			<div class="w-50">
+			<div class="container w-50">
 				<table class="table w-75">
 					<thead>
 						<tr>
@@ -49,7 +50,7 @@
 							<tr class="player-row">
 								<td class="align-middle player-name">{{$player->naam}}</td>
 								<td class="delete-player">
-									<form action="{{route('players.destroy', $player->id)}}">
+									<form action="{{route('players.destroy', $player->id)}}" method="POST">
 										@csrf
 										@method('DELETE')
 										<button type="submit" class="btn btn-outline-danger">
