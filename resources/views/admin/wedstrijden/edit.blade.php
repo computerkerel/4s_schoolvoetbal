@@ -3,6 +3,7 @@
 @section('content')
 	<div class="container">
 		<h1>Wedstrijd aanpassen</h1>
+		<hr>
 
 		@include('fragments.flash-message')
 
