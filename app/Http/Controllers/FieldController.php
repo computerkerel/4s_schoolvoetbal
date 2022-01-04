@@ -38,22 +38,22 @@ class FieldController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
 
-        $this -> validate($request,[
+        $this->validate($request, [
 
             'naam' => 'required',
-            ]);
+        ]);
 
 
         $fields = new Field();
-        $fields -> naam = $request-> naam;
+        $fields->naam = $request->naam;
         $fields->aangemaakt_door = Auth::user()->id;
-       $fields->save();
+        $fields->save();
 
         return redirect()->route('fields.index')
             ->with('success', 'Wedstrijd succesvol aangemaakt');
@@ -62,47 +62,47 @@ class FieldController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
         $fields = Field::findOrFail($id);
         return view('admin.veld.show')
-         ->with(compact('fields'));
+            ->with(compact('fields'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $fields = Field::findOrFail($id);
+        $field = Field::findOrFail($id);
 
         return view('admin.veld.edit')
-            ->with(compact('fields'));
+            ->with(compact('field'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
 
-        $this -> validate($request,[
+        $this->validate($request, [
 
             'naam' => 'required',
         ]);
 
         $fields = Field::findOrFail($id);
-        $fields -> naam = $request-> naam;
+        $fields->naam = $request->naam;
         $fields->aangemaakt_door = Auth::user()->id;
         $fields->save();
 
@@ -113,7 +113,7 @@ class FieldController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
