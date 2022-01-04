@@ -107,7 +107,7 @@ class FieldController extends Controller
         $fields->save();
 
         return redirect()->route('fields.index')
-            ->with('success', 'Wedstrijd succesvol aangemaakt');
+            ->with('success', 'Wedstrijd succesvol aangepast');
     }
 
     /**
