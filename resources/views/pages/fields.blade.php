@@ -3,6 +3,9 @@
 @section('content')
 	<div class="container">
 		<h1>Velden</h1>
+
+		@include('fragments.flash-message')
+
 		<table class="table">
 			<thead>
 				<tr>
