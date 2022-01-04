@@ -2,10 +2,12 @@
 
 @section('content')
 	<div class="container">
+		<h1>Velden</h1>
 		<table class="table">
 			<thead>
 				<tr>
-					<th>Velden</th>
+					<th>Naam</th>
+					<th>Aangemaakt door</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -14,6 +16,7 @@
 						<td>
 							<a href="{{route('fields.show', $field->id)}}">{{$field->naam}}</a>
 						</td>
+						<td>{{$field->aangemaakt_door->name}}</td>
 					</tr>
 				@endforeach
 			</tbody>
