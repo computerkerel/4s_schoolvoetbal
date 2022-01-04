@@ -17,7 +17,7 @@ class CreateFieldsTable extends Migration
             $table->id();
             $table->string('naam');
 
-            $table->foreignId('aangemaakt_door')
+            $table->foreignId('aangemaakt_door_id')
                 ->references('id')
                 ->on('users');
 

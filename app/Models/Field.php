@@ -11,7 +11,8 @@ class Field extends Model
 
     protected $table = 'fields';
 
-    public  function aangemaakt_door(){
-        return $this->belongsTo(User::class,'aangemaakt_door');
+    public function aangemaakt_door()
+    {
+        return $this->belongsTo(User::class, 'aangemaakt_door_id');
     }
 }
