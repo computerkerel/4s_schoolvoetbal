@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1>Veldem aanpassen</h1>
+        <h1>Velden aanpassen</h1>
 
         @include('fragments.flash-message')
 
