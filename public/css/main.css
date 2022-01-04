@@ -1,7 +1,7 @@
-.delete-player {
+.delete-player > form {
     visibility: hidden;
 }
 
-.player-row:hover > .delete-player {
+tr.player-row:hover > .delete-player form {
     visibility: visible;
 }
