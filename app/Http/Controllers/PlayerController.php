@@ -98,6 +98,9 @@ class PlayerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $player = Player::destroy($id);
+
+        return redirect()->back()
+            ->with('success', 'Speler succcesvol verwijderd');
     }
 }
