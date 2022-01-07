@@ -49,6 +49,9 @@ Route::get('/fields', [FieldController::class, 'index'])
 Route::get('/teams', [TeamController::class, 'index'])
     ->name('teams');
 
+Route::get('/spelers', [PlayerController::class, 'index'])
+    ->name('players');
+
 Route::get('/events', [MatchController::class, 'index'])
     ->name('events');
 
