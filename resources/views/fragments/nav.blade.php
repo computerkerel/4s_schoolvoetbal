@@ -7,9 +7,10 @@
 		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 			<div class="navbar-nav">
 				<a class="nav-link @if(request()->is('/')) active @endif" aria-current="page" href="{{route('home')}}">Home</a>
-				<a class="nav-link @if(request()->is('admin/wedstrijden')) active @endif" href="{{route('events')}}">Wedstrijden</a>
 				<a class="nav-link @if(request()->is('admin/teams')) active @endif" href="{{route("teams")}}">Teams</a>
-                <a class="nav-link @if(request()->is('pages/veld')) active @endif" href="{{route("fields")}}">Velden</a>
+				<a class="nav-link @if(request()->is('events')) active @endif" href="{{route('events')}}">Wedstrijden</a>
+				<a class="nav-link @if(request()->is('teams')) active @endif" href="{{route("teams")}}">Teams</a>
+				<a class="nav-link @if(request()->is('fields')) active @endif" href="{{route("fields")}}">Velden</a>
 			</div>
 		</div>
 
