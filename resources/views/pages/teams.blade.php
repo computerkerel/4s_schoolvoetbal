@@ -18,8 +18,9 @@
 				@foreach($teams as $team)
 					<tr>
 						<td>
-							<a href="{{route('teams.show', $team->id)}}">{{$team->teamnaam}}</a></td>
-						<td>{{$team->ingeschreven_door}}</td>
+							<a href="{{route('teams.show', $team->id)}}">{{$team->teamnaam}}</a>
+						</td>
+						<td>{{$team->inschrijver->name}}</td>
 					</tr>
 				@endforeach
 			</tbody>

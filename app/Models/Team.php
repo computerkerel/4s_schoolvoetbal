@@ -13,4 +13,9 @@ class Team extends Model
     {
         return $this->hasMany(Player::class, 'team_id');
     }
+
+    public function inschrijver()
+    {
+        return $this->belongsTo(User::class, 'ingeschreven_door');
+    }
 }

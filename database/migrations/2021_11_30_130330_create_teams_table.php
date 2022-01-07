@@ -15,7 +15,11 @@ class CreateTeamsTable extends Migration
     {
         Schema::create('teams', function (Blueprint $table) {
             $table->id();
-            $table->text('ingeschreven_door');
+
+            $table->foreignId('ingeschreven_door')
+                ->references('id')
+                ->on('users');
+
             $table->string('teamnaam')->unique();
             $table->timestamps();
         });

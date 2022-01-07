@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Team;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TeamController extends Controller
 {
@@ -44,7 +45,7 @@ class TeamController extends Controller
 
         $team = new Team();
         $team->teamnaam = $request->teamnaam;
-        $team->ingeschreven_door = $request->ingeschreven_door;
+        $team->ingeschreven_door = Auth::user()->id;
         $team->save();
 
         return redirect()->route('teams.index')
@@ -95,7 +96,7 @@ class TeamController extends Controller
 
         $team = Team::findOrFail($id);
         $team->teamnaam = $request->teamnaam;
-        $team->ingeschreven_door = $request->ingeschreven_door;
+        $team->ingeschreven_door = Auth::user()->id;
         $team->save();
 
         return redirect()->route('teams.index')
