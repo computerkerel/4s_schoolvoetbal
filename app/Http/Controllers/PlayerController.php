@@ -15,7 +15,11 @@ class PlayerController extends Controller
      */
     public function index()
     {
-        //
+        $players = Player::all();
+        $teams = Team::has('players', '>', 0)->get();
+
+        return view('pages.players')
+            ->with(['players' => $players, 'teams' => $teams]);
     }
 
     /**
@@ -50,8 +54,7 @@ class PlayerController extends Controller
 
             return redirect()->route('teams.edit', $teamId)
                 ->with('success', 'Speler succesvol toegevoegd');
-        }
-        else {
+        } else {
             return back()->with('danger', 'Team heeft al 11 spelers');
         }
     }
