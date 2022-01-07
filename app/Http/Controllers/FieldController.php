@@ -106,8 +106,12 @@ class FieldController extends Controller
         $fields->aangemaakt_door_id = Auth::user()->id;
         $fields->save();
 
-        return redirect()->route('fields.index')
-            ->with('success', 'Wedstrijd succesvol aangepast');
+
+        return redirect()->back()
+            ->with('success', 'Veld succesvol aangepast');
+
+//        return redirect()->route('fields.index')
+//            ->with('success', 'Wedstrijd succesvol aangepast');
     }
 
     /**
