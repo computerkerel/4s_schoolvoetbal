@@ -9,7 +9,7 @@
 		<table class="table">
 			<thead>
 				<tr>
-					<th>naam</th>
+					<th>Naam</th>
 					<th>Aangemaakt door</th>
 				</tr>
 			</thead>
