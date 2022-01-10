@@ -173,7 +173,6 @@
 
         function checkScores() {
             if ((scoreTeam1Field.value || scoreTeam2Field.value) && !isEdited) {
-                console.log('hoi');
 
                 modal.show();
 
