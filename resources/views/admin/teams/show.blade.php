@@ -43,6 +43,8 @@
 							</div>
 						</div>
 					</div>
+					<!-- Einde van Modal -->
+
 				</form>
 			</div>
 
