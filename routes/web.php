@@ -55,4 +55,8 @@ Route::get('/players', [PlayerController::class, 'index'])
 Route::get('/events', [MatchController::class, 'index'])
     ->name('events');
 
+Route::post('/events/clear', [MatchController::class, 'clear'])
+    ->middleware('auth')
+    ->name('events.clear');
+
 require __DIR__ . '/auth.php';
