@@ -67,9 +67,10 @@ class FieldController extends Controller
      */
     public function show($id)
     {
-        $fields = Field::findOrFail($id);
+        $field = Field::findOrFail($id);
+
         return view('admin.veld.show')
-            ->with(compact('fields'));
+            ->with(compact('field'));
     }
 
     /**
