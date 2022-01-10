@@ -5,6 +5,8 @@
 		<h1>Velden Detailpagina</h1>
 		<hr>
 
+		@include('fragments.flash-message')
+
 		<p><strong>Naam:</strong> {{$field->naam}}</p>
 
 		<h2>Geplande wedstrijden</h2>
@@ -37,10 +39,12 @@
 
 		<a href="{{route('fields.edit', $field->id)}}" class="btn btn-info">Aanpassen</a>
 
-		<form action="{{route('fields.destroy', $field->id)}}" method="POST">
-			@csrf
-			@method('DELETE')
-			<input type="submit" class="btn btn-danger" value="Verwijderen">
-		</form>
+		@if(Auth::user()->role == 3)
+			<form action="{{route('fields.destroy', $field->id)}}" method="POST">
+				@csrf
+				@method('DELETE')
+				<input type="submit" class="btn btn-danger" value="Verwijderen">
+			</form>
+		@endif
 	</div>
 @endsection

@@ -8,7 +8,7 @@
 		@include('fragments.flash-message')
 
 		<div class="container d-flex">
-			<div class="container w-75">
+			<div class="container">
 				<h2>Details</h2>
 				<form action="{{route('wedstrijden.update', $wedstrijd->id)}}" method="POST"
 				      class="w-75">
@@ -141,22 +141,23 @@
 				</form>
 			</div>
 
-
-			<div class="container w-25">
-				<h2>Veld aanpassen</h2>
-				<form action="{{route('fields.update', $wedstrijd->field->id)}}" class="mx-auto" method="POST">
-					@method('PUT')
-					@csrf
-					<div class="mb-3">
-						<label for="naam" class="form-label">Veldnaam</label>
-						<input type="text" class="form-control" name="naam" id="naam"
-						       value="{{$wedstrijd->field->naam}}">
-					</div>
-					<div class="mb-3">
-						<input type="submit" class="btn btn-primary" value="Opslaan">
-					</div>
-				</form>
-			</div>
+			@if(Auth::user()->role == 3)
+				<div class="container w-25">
+					<h2>Veld aanpassen</h2>
+					<form action="{{route('fields.update', $wedstrijd->field->id)}}" class="mx-auto" method="POST">
+						@method('PUT')
+						@csrf
+						<div class="mb-3">
+							<label for="naam" class="form-label">Veldnaam</label>
+							<input type="text" class="form-control" name="naam" id="naam"
+							       value="{{$wedstrijd->field->naam}}">
+						</div>
+						<div class="mb-3">
+							<input type="submit" class="btn btn-primary" value="Opslaan">
+						</div>
+					</form>
+				</div>
+			@endif
 		</div>
 	</div>
 
