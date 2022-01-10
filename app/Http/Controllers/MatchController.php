@@ -7,6 +7,7 @@ use App\Models\Match;
 use App\Models\Team;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MatchController extends Controller
 {
@@ -149,5 +150,21 @@ class MatchController extends Controller
 
         return redirect()->route('wedstrijden.index')
             ->with('success', 'Wedstrijd succesvol verwijderd');
+    }
+
+    public function clear()
+    {
+        if (Auth::user()->role == 3) {
+            $wedstrijden = Match::all();
+
+            foreach ($wedstrijden as $wedstrijd) {
+                Match::destroy($wedstrijd->id);
+            }
+            return redirect()->route('wedstrijden.index')
+                ->with(['success', 'Alle wedstrijden succesvol verwijderd']);
+        } else {
+            return redirect()->route('wedstrijden.index')
+                ->with('danger', 'Je hebt niet voldoende rechten');
+        }
     }
 }
