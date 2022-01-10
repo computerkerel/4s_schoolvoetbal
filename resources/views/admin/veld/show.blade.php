@@ -7,7 +7,6 @@
 
 		<p><strong>Naam:</strong> {{$field->naam}}</p>
 
-		<h2>Geplance wedstrijden</h2>
 		<table class="table">
 			<thead>
 				<tr>
@@ -18,6 +17,7 @@
 			</thead>
 			<tbody>
 				@foreach($field->geplande_wedstrijden as $wedstrijd)
+		<h2>Geplande wedstrijden</h2>
 					<tr>
 						<td>{{$wedstrijd->team1->teamnaam}}</td>
 						<td>{{$wedstrijd->team2->teamnaam}}</td>
