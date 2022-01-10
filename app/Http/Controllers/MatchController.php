@@ -18,7 +18,7 @@ class MatchController extends Controller
     public function index()
     {
         $wedstrijden = Match::all();
-        return view('pages/events')
+        return view('pages.events')
             ->with(compact('wedstrijden'));
     }
 
