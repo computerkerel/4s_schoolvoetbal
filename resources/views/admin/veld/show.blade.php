@@ -7,25 +7,33 @@
 
 		<p><strong>Naam:</strong> {{$field->naam}}</p>
 
-		<table class="table">
-			<thead>
-				<tr>
-					<th>Team 1</th>
-					<th>Team 2</th>
-					<th>Datum</th>
-				</tr>
-			</thead>
-			<tbody>
-				@foreach($field->geplande_wedstrijden as $wedstrijd)
 		<h2>Geplande wedstrijden</h2>
+		@if($field->geplande_wedstrijden->count() > 0)
+			<table class="table">
+				<thead>
 					<tr>
-						<td>{{$wedstrijd->team1->teamnaam}}</td>
-						<td>{{$wedstrijd->team2->teamnaam}}</td>
-						<td>{{date('d-m-Y H:i', strtotime($wedstrijd->datum))}}</td>
+						<th>Team 1</th>
+						<th>Team 2</th>
+						<th>Datum</th>
 					</tr>
-				@endforeach
-			</tbody>
-		</table>
+				</thead>
+				<tbody>
+
+					@foreach($field->geplande_wedstrijden as $wedstrijd)
+						<tr>
+							<td>{{$wedstrijd->team1->teamnaam}}</td>
+							<td>{{$wedstrijd->team2->teamnaam}}</td>
+							<td>{{date('d-m-Y H:i', strtotime($wedstrijd->datum))}}</td>
+						</tr>
+					@endforeach
+
+				</tbody>
+			</table>
+
+		@else
+			<hr>
+			<p>Geen geplande wedstrijden</p>
+		@endif
 
 		<a href="{{route('fields.edit', $field->id)}}" class="btn btn-info">Aanpassen</a>
 
