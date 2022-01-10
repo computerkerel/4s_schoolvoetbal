@@ -7,7 +7,7 @@
 		<h2>{{$wedstrijd->title}}</h2>
 		<p><strong>Team 1:</strong> {{$wedstrijd->team1->teamnaam}}</p>
 		<p><strong>Team 2:</strong> {{$wedstrijd->team2->teamnaam}}</p>
-		<p><strong>Datum:</strong> {{$wedstrijd->datum}}</p>
+		<p><strong>Datum:</strong> {{date('d-m-Y H:i', strtotime($wedstrijd->datum))}}</p>
 		<p><strong>Locatie:</strong> {{$wedstrijd->field->naam}}</p>
 		<p><strong>Scheidsrechter:</strong> {{$wedstrijd->scheidsrechter->name}}</p>
 		<p><strong>Status:</strong> {{$wedstrijd->status}}</p>

@@ -56,7 +56,7 @@
 
 				<div class="mb-3">
 					<label for="datum" class="form-label">Datum</label>
-					<input type="date" class="form-control" name="datum" id="datum" value="{{old('datum')}}">
+					<input type="datetime-local" class="form-control" name="datum" id="datum" value="{{old('datum')}}">
 				</div>
 
 			</div>

@@ -73,8 +73,8 @@
 
 					<div class="mb-3">
 						<label for="datum" class="form-label">Datum</label>
-						<input type="date" class="form-control" name="datum" id="datum"
-						       value="{{date('Y-m-d', strtotime($wedstrijd->datum))}}">
+						<input type="datetime-local" class="form-control" name="datum" id="datum"
+						       value="{{date('Y-m-d', strtotime($wedstrijd->datum))}}T{{date('H:i:s', strtotime($wedstrijd->datum))}}">
 					</div>
 
 					<div class="mb-3">
