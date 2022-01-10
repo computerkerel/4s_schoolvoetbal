@@ -10,6 +10,7 @@
 			<thead>
 				<tr>
 					<th>Naam</th>
+					<th>Aantal geplande wedstrijden</th>
 					<th>Aangemaakt door</th>
 				</tr>
 			</thead>
@@ -19,6 +20,7 @@
 						<td>
 							<a href="{{route('fields.show', $field->id)}}">{{$field->naam}}</a>
 						</td>
+						<td>{{$field->wedstrijden->count()}}</td>
 						<td>{{$field->aangemaakt_door->name}}</td>
 					</tr>
 				@endforeach

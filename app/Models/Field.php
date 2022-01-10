@@ -15,4 +15,9 @@ class Field extends Model
     {
         return $this->belongsTo(User::class, 'aangemaakt_door_id');
     }
+
+    public function wedstrijden()
+    {
+        return $this->hasMany(Match::class, 'field_id');
+    }
 }
