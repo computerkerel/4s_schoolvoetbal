@@ -20,4 +20,9 @@ class Field extends Model
     {
         return $this->hasMany(Match::class, 'field_id');
     }
+
+    public function geplande_wedstrijden()
+    {
+        return $this->wedstrijden()->where('datum', '>=', date('Y-m-d'));
+    }
 }
