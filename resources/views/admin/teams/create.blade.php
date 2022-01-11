@@ -4,7 +4,15 @@
 	<div class="container">
 		<h1>Nieuw team</h1>
 
-		@include('fragments.flash-message')
+		@if ($errors->any())
+			<div class="alert alert-danger">
+				<ul>
+					@foreach ($errors->all() as $error)
+						<li>{{ $error }}</li>
+					@endforeach
+				</ul>
+			</div>
+		@endif
 
 		<form action="{{route('teams.store')}}" method="POST" class="w-50 mx-auto">
 			@csrf
