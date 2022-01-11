@@ -16,7 +16,7 @@
 
 		@guest
 		<div class="d-flex navbar-nav">
-			<a href="{{route('register')}}" class="nav-link">Registreren</a>
+			<a href="{{route('usertype')}}" class="nav-link">Registreren</a>
 			<a href="{{route('login')}}" class="nav-link">Inloggen</a>
 		</div>
 		@endguest

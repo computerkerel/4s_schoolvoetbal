@@ -59,4 +59,8 @@ Route::post('/events/clear', [MatchController::class, 'clear'])
     ->middleware('auth')
     ->name('events.clear');
 
+Route::get('/usertype', function(){
+    return view('pages.user-type');
+})->name('usertype');
+
 require __DIR__ . '/auth.php';
