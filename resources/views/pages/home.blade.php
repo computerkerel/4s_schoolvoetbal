@@ -12,7 +12,8 @@
 							{{$wedstrijd->team1->teamnaam}} vs {{$wedstrijd->team2->teamnaam}}
 						</h2>
 						<p class="text-center">
-							Op {{$wedstrijd->field->naam}} om {{$wedstrijd->datum}}
+							Op {{$wedstrijd->field->naam}} op {{date('d-m-Y', strtotime($wedstrijd->datum))}}
+							om {{date('H:i', strtotime($wedstrijd->datum))}}
 						</p>
 					@endforeach
 				</div>
