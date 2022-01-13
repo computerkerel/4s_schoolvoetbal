@@ -38,20 +38,22 @@
 								</tr>
 							@endforeach
 						</tbody>
-						<tfoot>
-							<tr>
-								<td>
-									<form action="{{route('players.store', $team->id)}}" method="POST">
-										@csrf
-										<div class="row d-flex justify-content-evenly">
-											<input type="text" class="form-control w-75" name="naam" id="naam"
-											       placeholder="Naam">
-											<input type="submit" class="btn btn-primary w-auto" value="+">
-										</div>
-									</form>
-								</td>
-							</tr>
-						</tfoot>
+						@auth()
+							<tfoot>
+								<tr>
+									<td>
+										<form action="{{route('players.store', $team->id)}}" method="POST">
+											@csrf
+											<div class="row d-flex justify-content-evenly">
+												<input type="text" class="form-control w-75" name="naam" id="naam"
+												       placeholder="Naam">
+												<input type="submit" class="btn btn-primary w-auto" value="+">
+											</div>
+										</form>
+									</td>
+								</tr>
+							</tfoot>
+						@endauth
 					</table>
 				</div>
 			@endforeach

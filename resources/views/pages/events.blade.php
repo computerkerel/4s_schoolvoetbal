@@ -6,40 +6,43 @@
 		<div class="d-flex justify-content-between">
 			<h1>Wedstrijden</h1>
 
-			@if(Auth::user()->role == 3)
-				<form action="{{route('events.clear')}}" method="POST" class="my-auto">
-					@csrf
-					<input type="button" class="btn btn-danger" id="clear-events" value="Alles verwijderen"
-					       data-bs-toggle="modal"
-					       data-bs-target="#clearEventsModal">
+			@auth()
+				@if(Auth::user()->role == 3)
+					<form action="{{route('events.clear')}}" method="POST" class="my-auto">
+						@csrf
+						<input type="button" class="btn btn-danger" id="clear-events" value="Alles verwijderen"
+						       data-bs-toggle="modal"
+						       data-bs-target="#clearEventsModal">
 
-					<!-- Modal -->
-					<div class="modal fade" id="clearEventsModal" tabindex="-1" aria-labelledby="clearEventsModal"
-					     aria-hidden="true">
-						<div class="modal-dialog">
-							<div class="modal-content">
-								<div class="modal-header">
-									<h5 class="modal-title" id="clearEventsModalLabel">Alle wedstrijden
-										verwijderen?</h5>
-									<button type="button" class="btn-close" data-bs-dismiss="modal"
-									        aria-label="Close"></button>
-								</div>
-								<div class="modal-body">
-									<p>Dit kan niet ongedaan gemaakt worden.</p>
-									<p><strong>Weet je het zeker?</strong></p>
-								</div>
-								<div class="modal-footer">
-									<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuleren
-									</button>
-									<button type="submit" class="btn btn-danger">Verwijderen</button>
+						<!-- Modal -->
+						<div class="modal fade" id="clearEventsModal" tabindex="-1" aria-labelledby="clearEventsModal"
+						     aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="clearEventsModalLabel">Alle wedstrijden
+											verwijderen?</h5>
+										<button type="button" class="btn-close" data-bs-dismiss="modal"
+										        aria-label="Close"></button>
+									</div>
+									<div class="modal-body">
+										<p>Dit kan niet ongedaan gemaakt worden.</p>
+										<p><strong>Weet je het zeker?</strong></p>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+											Annuleren
+										</button>
+										<button type="submit" class="btn btn-danger">Verwijderen</button>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-					<!-- Einde van Modal -->
+						<!-- Einde van Modal -->
 
-				</form>
-			@endif
+					</form>
+				@endif
+			@endauth
 		</div>
 
 		@include('fragments.flash-message')

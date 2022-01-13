@@ -26,9 +26,12 @@
 				@endforeach
 			</tbody>
 		</table>
-		@if(Auth::user()->role == 3)
-			<a href="{{route('fields.create')}}" class="btn btn-primary"><i class="bi bi-plus-square"></i> Nieuwe Veld
-			</a>
-		@endif
+		@auth
+			@if(Auth::user()->role == 3)
+				<a href="{{route('fields.create')}}" class="btn btn-primary"><i class="bi bi-plus-square"></i> Nieuwe
+					Veld
+				</a>
+			@endif
+		@endauth
 	</div>
 @endsection

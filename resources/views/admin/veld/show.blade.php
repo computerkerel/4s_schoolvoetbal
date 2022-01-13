@@ -39,12 +39,14 @@
 
 		<a href="{{route('fields.edit', $field->id)}}" class="btn btn-info">Aanpassen</a>
 
-		@if(Auth::user()->role == 3)
-			<form action="{{route('fields.destroy', $field->id)}}" method="POST">
-				@csrf
-				@method('DELETE')
-				<input type="submit" class="btn btn-danger" value="Verwijderen">
-			</form>
-		@endif
+		@auth()
+			@if(Auth::user()->role == 3)
+				<form action="{{route('fields.destroy', $field->id)}}" method="POST">
+					@csrf
+					@method('DELETE')
+					<input type="submit" class="btn btn-danger" value="Verwijderen">
+				</form>
+			@endif
+		@endauth
 	</div>
 @endsection
