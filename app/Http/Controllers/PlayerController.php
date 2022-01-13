@@ -52,7 +52,7 @@ class PlayerController extends Controller
             $player->team_id = $teamId;
             $player->save();
 
-            return redirect()->route('teams.edit', $teamId)
+            return redirect()->back()
                 ->with('success', 'Speler succesvol toegevoegd');
         } else {
             return back()->with('danger', 'Team heeft al 11 spelers');
