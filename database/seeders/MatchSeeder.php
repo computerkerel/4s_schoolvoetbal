@@ -31,8 +31,6 @@ class MatchSeeder extends Seeder
         $wedstrijd->title = "4S Schoolvoetbal vs FC Breda";
         $wedstrijd->team1_id = 1;
         $wedstrijd->team2_id = 2;
-        $wedstrijd->score_team1 = 4;
-        $wedstrijd->score_team2 = 2;
         $wedstrijd->field_id = 2;
         $wedstrijd->datum = '2022-1-19 18:00:00';
         $wedstrijd->scheidsrechter_id = 2;
