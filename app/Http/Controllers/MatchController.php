@@ -167,4 +167,36 @@ class MatchController extends Controller
                 ->with('danger', 'Je hebt niet voldoende rechten');
         }
     }
+
+    public function fetchinator()
+    {
+        $matches = Match::all();
+
+        $json = [];
+
+        foreach ($matches as $match) {
+            $matchData = [
+                'id' => $match->id,
+                'title' => $match->title,
+                'team1_id' => $match->team1->id,
+                'team1_naam' => $match->team1->teamnaam,
+                'team1_score' => $match->score_team1,
+                'team2_id' => $match->team2->id,
+                'team2_naam' => $match->team2->teamnaam,
+                'team2_score' => $match->score_team1,
+                'datum' => $match->datum,
+                'scheidsrechter_id' => $match->scheidsrechter->id,
+                'scheidsrechter_naam' => $match->scheidsrechter->name,
+                'veld_id' => $match->field->id,
+                'veld_naam' => $match->field->naam
+            ];
+
+            array_push($json, $matchData);
+        }
+
+        return response()->json([
+            'status' => 5,
+            'payload' => $json
+        ]);
+    }
 }
