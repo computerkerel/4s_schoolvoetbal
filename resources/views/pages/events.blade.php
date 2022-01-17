@@ -8,39 +8,65 @@
 
 			@auth()
 				@if(Auth::user()->role == 3)
-					<form action="{{route('events.clear')}}" method="POST" class="my-auto">
-						@csrf
-						<input type="button" class="btn btn-danger" id="clear-events" value="Alles verwijderen"
-						       data-bs-toggle="modal"
-						       data-bs-target="#clearEventsModal">
+					<div class="d-flex w-50 my-auto ps-5 justify-content-end">
+						<div class="d-flex w-75 ps-5 justify-content-between">
+							<form action="{{route('events.generate')}}" method="POST">
+								@csrf
 
-						<!-- Modal -->
-						<div class="modal fade" id="clearEventsModal" tabindex="-1" aria-labelledby="clearEventsModal"
-						     aria-hidden="true">
-							<div class="modal-dialog">
-								<div class="modal-content">
-									<div class="modal-header">
-										<h5 class="modal-title" id="clearEventsModalLabel">Alle wedstrijden
-											verwijderen?</h5>
-										<button type="button" class="btn-close" data-bs-dismiss="modal"
-										        aria-label="Close"></button>
-									</div>
-									<div class="modal-body">
-										<p>Dit kan niet ongedaan gemaakt worden.</p>
-										<p><strong>Weet je het zeker?</strong></p>
-									</div>
-									<div class="modal-footer">
-										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-											Annuleren
-										</button>
-										<button type="submit" class="btn btn-danger">Verwijderen</button>
+
+								@if(count($wedstrijden) > 0)
+									<span class="d-inline-block" id="generate-events" data-bs-toggle="tooltip"
+									      title="Kan alleen als er geen wedstrijden gepland zijn">
+										<button type="submit" class="btn btn-success"
+										        data-bs-placement="top" disabled>
+										<i class="bi bi-arrow-repeat"></i> Competitie genereren
+									</button>
+									</span>
+
+								@else
+									<button type="submit" class="btn btn-success">
+										<i class="bi bi-arrow-repeat"></i> Competitie genereren
+									</button>
+								@endif
+							</form>
+
+
+							<form action="{{route('events.clear')}}" method="POST">
+								@csrf
+								<input type="button" class="btn btn-danger" id="clear-events" value="Alles verwijderen"
+								       data-bs-toggle="modal"
+								       data-bs-target="#clearEventsModal">
+
+								<!-- Modal -->
+								<div class="modal fade" id="clearEventsModal" tabindex="-1"
+								     aria-labelledby="clearEventsModal"
+								     aria-hidden="true">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h5 class="modal-title" id="clearEventsModalLabel">Alle wedstrijden
+													verwijderen?</h5>
+												<button type="button" class="btn-close" data-bs-dismiss="modal"
+												        aria-label="Close"></button>
+											</div>
+											<div class="modal-body">
+												<p>Dit kan niet ongedaan gemaakt worden.</p>
+												<p><strong>Weet je het zeker?</strong></p>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+													Annuleren
+												</button>
+												<button type="submit" class="btn btn-danger">Verwijderen</button>
+											</div>
+										</div>
 									</div>
 								</div>
-							</div>
-						</div>
-						<!-- Einde van Modal -->
+								<!-- Einde van Modal -->
 
-					</form>
+							</form>
+						</div>
+					</div>
 				@endif
 			@endauth
 		</div>
@@ -92,6 +118,9 @@
             trigger.focus()
             event.preventDefault();
         });
+
+        var buttonWithTooltip = document.getElementById('generate-events')
+        var tooltip = new bootstrap.Tooltip(buttonWithTooltip)
 	</script>
 @endsection
 
