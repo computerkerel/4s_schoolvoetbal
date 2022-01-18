@@ -154,15 +154,21 @@ class MatchController extends Controller
 
     public function clear()
     {
-        if (Auth::user()->role == 3) {
-            $wedstrijden = Match::all();
-
-            foreach ($wedstrijden as $wedstrijd) {
-                Match::destroy($wedstrijd->id);
-            }
+        if (Auth::user()->role != 3) {
             return redirect()->route('wedstrijden.index')
-                ->with(['success', 'Alle wedstrijden succesvol verwijderd']);
-        } else {
+                ->with('danger', 'Je hebt niet voldoende rechten');
+        }
+
+        $wedstrijden = Match::all();
+
+        foreach ($wedstrijden as $wedstrijd) {
+            Match::destroy($wedstrijd->id);
+        }
+
+        return redirect()->route('wedstrijden.index')
+            ->with(['success', 'Alle wedstrijden succesvol verwijderd']);
+    }
+
             return redirect()->route('wedstrijden.index')
                 ->with('danger', 'Je hebt niet voldoende rechten');
         }
