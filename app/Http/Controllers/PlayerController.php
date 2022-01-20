@@ -43,7 +43,7 @@ class PlayerController extends Controller
         $players = Team::findOrFail($teamId)->players;
 
         $this->validate($request, [
-            'naam' => 'required'
+            'naam' => 'required|unique:players'
         ]);
 
         if ($players->count() < 11) {
