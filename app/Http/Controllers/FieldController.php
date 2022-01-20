@@ -133,6 +133,8 @@ class FieldController extends Controller
         if ($field->wedstrijden->count() === 0) {
             $field = Field::destroy($id);
 
+            return redirect()->route('fields.index')
+                ->with('success', 'Veld succesvol verwijderd');
         } else {
             return redirect()->back()
                 ->with('danger', 'Kan een veld niet verwijderen als er wedstrijden op zijn');
