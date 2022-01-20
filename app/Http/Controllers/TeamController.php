@@ -39,7 +39,7 @@ class TeamController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'teamnaam' => 'required',
+            'teamnaam' => 'required|unique:teams',
             'ingeschreven_door' => 'required'
         ]);
 
