@@ -95,9 +95,13 @@
 						</td>
 						<td>{{$wedstrijd->team2->teamnaam}}</td>
 						<td>{{$wedstrijd->score_team1}}-{{$wedstrijd->score_team2}}</td>
-						<td>{{$wedstrijd->field->naam}}</td>
-						<td>{{date('d-m-Y', strtotime($wedstrijd->datum))}} {{date('H:i', strtotime($wedstrijd->datum))}}</td>
-						<td>{{$wedstrijd->scheidsrechter->name}}</td>
+						<td>{{$wedstrijd->field->naam ?? ''}}</td>
+						<td>
+							@isset($wedstrijd->datum)
+								{{date('d-m-Y', strtotime($wedstrijd->datum))}} {{date('H:i', strtotime($wedstrijd->datum))}}
+							@endisset
+						</td>
+						<td>{{$wedstrijd->scheidsrechter->name ?? ''}}</td>
 						<td>{{$wedstrijd->status}}</td>
 					</tr>
 				@endforeach
