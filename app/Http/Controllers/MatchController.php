@@ -175,6 +175,17 @@ class MatchController extends Controller
             return redirect()->route('wedstrijden.index')
                 ->with('danger', 'Je hebt niet voldoende rechten');
         }
+
+        $teams = Team::all();
+
+        for ($i = 0; $i < count($teams); $i++) {
+            for ($j = $i + 1; $j < count($teams); $j++) {
+                $wedstrijd = new Match();
+                $wedstrijd->team1_id = $teams[$i]->id;
+                $wedstrijd->team2_id = $teams[$j]->id;
+                $wedstrijd->save();
+            }
+        }
     }
 
     public function fetchinator()
