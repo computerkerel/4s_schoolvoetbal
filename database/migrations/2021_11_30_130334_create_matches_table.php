@@ -17,7 +17,7 @@ class CreateMatchesTable extends Migration
             $table->id();
             $table->integer('score_team1')->nullable();
             $table->integer('score_team2')->nullable();
-            $table->string('title');
+            $table->string('title')->nullable();
             $table->text('status')->nullable();
 
             $table->foreignId('team1_id')
@@ -30,17 +30,19 @@ class CreateMatchesTable extends Migration
                 ->on('teams')
                 ->onDelete('cascade');
 
-            $table->dateTime('datum');
+            $table->dateTime('datum')->nullable();
 
             $table->foreignId('scheidsrechter_id')
+                ->nullable()
                 ->references('id')
                 ->on('users');
 
             $table->boolean('is_bewerkt')->default(0);
 
             $table->foreignId('field_id')
-            ->references('id')
-            ->on('fields')
+                ->nullable()
+                ->references('id')
+                ->on('fields')
                 ->onUpdate('cascade');
 
             $table->timestamps();
