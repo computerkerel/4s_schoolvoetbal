@@ -59,6 +59,10 @@ Route::post('/events/clear', [MatchController::class, 'clear'])
     ->middleware('auth')
     ->name('events.clear');
 
+Route::post('/events/generate', [MatchController::class, 'generate'])
+    ->middleware('auth')
+    ->name('events.generate');
+
 Route::get('/usertype', function () {
     return view('pages.user-type');
 })->name('usertype');
