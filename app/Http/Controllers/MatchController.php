@@ -169,6 +169,9 @@ class MatchController extends Controller
             ->with(['success', 'Alle wedstrijden succesvol verwijderd']);
     }
 
+    public function generate()
+    {
+        if (Auth::user()->role != 3) {
             return redirect()->route('wedstrijden.index')
                 ->with('danger', 'Je hebt niet voldoende rechten');
         }
