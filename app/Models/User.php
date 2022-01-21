@@ -47,5 +47,12 @@ class User extends Authenticatable
         return $this->belongsTo(Team::class);
     }
 
+    public  function scheidsrechter(){
+
+        return $this->hasMany(Scheidsrechter::class, 'scheidrechter_id');
+
+    }
+
+
 
 }

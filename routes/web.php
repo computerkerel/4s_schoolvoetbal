@@ -6,7 +6,7 @@ use \App\Http\Controllers\MatchController;
 use \App\Http\Controllers\TeamController;
 use \App\Http\Controllers\PlayerController;
 use \App\Http\Controllers\FieldController;
-
+use \App\Http\Controllers\ScheidsrechterController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,6 +42,13 @@ Route::post('/players/{team}', [PlayerController::class, 'store'])
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::resource('fields', FieldController::class);
 });
+
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
+    Route::resource('scheidsrechters', ScheidsrechterController::class);
+});
+
+Route::get('/scheidsrechters', [ScheidsrechterController::class, 'index'])
+    ->name('scheidsrechters');
 
 Route::get('/fields', [FieldController::class, 'index'])
     ->name('fields');

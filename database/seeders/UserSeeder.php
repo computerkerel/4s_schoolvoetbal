@@ -28,6 +28,29 @@ class UserSeeder extends Seeder
         $user->role = 2;
         $user->save();
 
+
+        $user = new User();
+        $user->name = "Ibrahim";
+        $user->email = "ibrahim@ibrahim.nl";
+        $user->password = '$2y$10$f8EeZ0nWtwFaECWuwhIYJuCB7I.JtMuFZAr34VXvYMU83x5C/Q10q';
+        $user->role = 2;
+        $user->save();
+
+
+        $user = new User();
+        $user->name = "Jan";
+        $user->email = "jan@jan.nl";
+        $user->password = '$2y$10$f8EeZ0nWtwFaECWuwhIYJuCB7I.JtMuFZAr34VXvYMU83x5C/Q10q';
+        $user->role = 2;
+        $user->save();
+
+        $user = new User();
+        $user->name = "Henk";
+        $user->email = "henk@henk.nl";
+        $user->password = '$2y$10$f8EeZ0nWtwFaECWuwhIYJuCB7I.JtMuFZAr34VXvYMU83x5C/Q10q';
+        $user->role = 2;
+        $user->save();
+
         $user = new User();
         $user->name = "Fedde";
         $user->email = "fedde@fedde.nl";
