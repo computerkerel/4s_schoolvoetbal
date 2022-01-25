@@ -186,6 +186,8 @@ class MatchController extends Controller
                 $wedstrijd->save();
             }
         }
+
+
     }
 
     public function fetchinator()
@@ -193,26 +195,43 @@ class MatchController extends Controller
         $matches = Match::all();
 
         $json = [];
+        $result = [];
 
-        foreach ($matches as $match) {
-            $matchData = [
-                'id' => $match->id,
-                'title' => $match->title,
-                'team1_id' => $match->team1->id,
-                'team1_naam' => $match->team1->teamnaam,
-                'team1_score' => $match->score_team1,
-                'team2_id' => $match->team2->id,
-                'team2_naam' => $match->team2->teamnaam,
-                'team2_score' => $match->score_team1,
-                'datum' => $match->datum,
-                'scheidsrechter_id' => $match->scheidsrechter->id,
-                'scheidsrechter_naam' => $match->scheidsrechter->name,
-                'veld_id' => $match->field->id,
-                'veld_naam' => $match->field->naam
-            ];
+//        foreach ($matches as $match) {
+//            $matchData = [
+//                'id' => $match->id,
+//                'title' => $match->title,
+//                'team1_id' => $match->team1->id,
+//                'team1_naam' => $match->team1->teamnaam,
+//                'team1_score' => $match->score_team1,
+//                'team2_id' => $match->team2->id,
+//                'team2_naam' => $match->team2->teamnaam,
+//                'team2_score' => $match->score_team1,
+//                'datum' => $match->datum,
+//                'scheidsrechter_id' => $match->scheidsrechter->id,
+//                'scheidsrechter_naam' => $match->scheidsrechter->name,
+//                'veld_id' => $match->field->id,
+//                'veld_naam' => $match->field->naam
+//            ];
+//
+//            $result = json_encode(array_push($json, $matchData));
+//        }
 
-            array_push($json, $matchData);
-        }
+        $json = '[
+            {
+            "team1_name": "FC Groningen",
+            "team2_name": "PSV"
+            }
+            ,
+            {
+            "team1_name": "NAC",
+            "team2_name": "PSV"
+            }
+            ,
+            {
+            "team1_name": "FC Utrecht",
+            "team2_name": "Feyenoord"
+            }';
 
         return response()->json([
             'status' => 5,
