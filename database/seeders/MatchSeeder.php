@@ -37,6 +37,24 @@ class MatchSeeder extends Seeder
         $wedstrijd->status = "4S Schoolvoetbal heeft gewonen";
         $wedstrijd->save();
 
+        $wedstrijd = new Match();
+        $wedstrijd->title = "";
+        $wedstrijd->team1_id = 3;
+        $wedstrijd->team2_id = 2;
+        $wedstrijd->field_id = 1;
+        $wedstrijd->datum = '2022-2-13 19:00:00';
+        $wedstrijd->scheidsrechter_id = 2;
+        $wedstrijd->status = "";
+        $wedstrijd->save();
 
+        $wedstrijd = new Match();
+        $wedstrijd->title = "";
+        $wedstrijd->team1_id = 2;
+        $wedstrijd->team2_id = 3;
+        $wedstrijd->field_id = 3;
+        $wedstrijd->datum = '2022-2-20 20:00:00';
+        $wedstrijd->scheidsrechter_id = 1;
+        $wedstrijd->status = "";
+        $wedstrijd->save();
     }
 }
