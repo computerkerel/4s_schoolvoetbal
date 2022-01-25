@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Match;
 use App\Models\Team;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -16,8 +17,10 @@ class TeamController extends Controller
     public function index()
     {
         $teams = Team::all();
+        $matches = Match::all();
+
         return view('pages.teams')
-            ->with(compact('teams'));
+            ->with(compact('teams', 'matches'));
     }
 
     /**
