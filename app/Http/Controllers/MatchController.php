@@ -31,7 +31,7 @@ class MatchController extends Controller
     public function create()
     {
         $teams = Team::all();
-        $users = User::all();
+        $users = User::where("role" , "=", "2")->get();
         $fields = Field::all();
         return view('admin.wedstrijden.create')
             ->with(['teams' => $teams, 'users' => $users, 'fields' => $fields]);
@@ -91,7 +91,7 @@ class MatchController extends Controller
     {
         $wedstrijd = Match::findOrFail($id);
         $teams = Team::all();
-        $users = User::all();
+        $users = User::where("role" , "=", "2")->get();
         $fields = Field::all();
         return view('admin.wedstrijden.edit')
             ->with(['wedstrijd' => $wedstrijd, 'teams' => $teams, 'users' => $users, 'fields' => $fields]);
