@@ -218,6 +218,11 @@ class MatchController extends Controller
             array_push($json, $matchData);
         }
 
-        return Match::all();
+//        return Match::all();
+
+        return response()->json([
+            'status' => 5,
+            'payload' => $json
+        ]);
     }
 }
