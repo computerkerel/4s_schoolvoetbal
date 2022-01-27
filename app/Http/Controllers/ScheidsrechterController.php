@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 
 
 
-use App\Models\Event;
+use App\Models\Match;
 use App\Models\Scheidsrechter;
 
 use App\Models\User;

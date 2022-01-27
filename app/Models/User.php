@@ -53,6 +53,10 @@ class User extends Authenticatable
 
     }
 
+    public function wedstrijden(){
+        return $this->hasMany(Match::class, 'scheidsrechter_id');
+    }
+
 
 
 }

@@ -8,11 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Scheidsrechter extends Model
 {
     use HasFactory;
-    protected $table = 'scheidsrechters';
 
-    public function matches()
+    public function wedstrijden()
     {
-        return $this->hasMany(matchs::class, 'match_id');
+        return $this->hasMany(Match::class, 'scheidsrechter_id');
     }
 
     public function scheidsrechter()

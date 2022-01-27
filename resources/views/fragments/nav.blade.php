@@ -10,7 +10,7 @@
 				<a class="nav-link @if(request()->is('events')) active @endif" href="{{route('events')}}">Wedstrijden</a>
 				<a class="nav-link @if(request()->is('teams')) active @endif" href="{{route("teams")}}">Teams</a>
 				<a class="nav-link @if(request()->is('spelers')) active @endif" href="{{route("players")}}">Spelers</a>
-                <a class="nav-link @if(request()->is('scheidsrechters')) active @endif" href="{{route("scheidsrechters")}}">scheidsrechters</a>
+                <a class="nav-link @if(request()->is('scheidsrechters')) active @endif" href="{{route("scheidsrechters")}}">Scheidsrechters</a>
 				<a class="nav-link @if(request()->is('fields')) active @endif" href="{{route("fields")}}">Velden</a>
 			</div>
 		</div>
