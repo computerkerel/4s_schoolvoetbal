@@ -9,28 +9,35 @@
 			<div class="w-100">
 				<h2>{{$scheidsrechters->name}}</h2>
 				<div>
-					<table class="table">
-						<thead>
-							<tr>
-								<th>Team 1</th>
-								<th>Team 2</th>
-								<th>Datum</th>
-								<th>Veld</th>
-							</tr>
-						</thead>
-						<tbody>
+					@if($scheidsrechters->wedstrijden->count() > 0)
 
-							@foreach($scheidsrechters->wedstrijden as $wedstrijd)
+						<table class="table">
+							<thead>
 								<tr>
-									<td>{{$wedstrijd->team1->teamnaam}}</td>
-									<td>{{$wedstrijd->team2->teamnaam}}</td>
-									<td>{{date('d-m-Y', strtotime($wedstrijd->datum))}} {{date('H:i', strtotime($wedstrijd->datum))}}</td>
-									<td>{{$wedstrijd->veld}}</td>
+									<th>Team 1</th>
+									<th>Team 2</th>
+									<th>Datum</th>
+									<th>Veld</th>
 								</tr>
-							@endforeach
+							</thead>
+							<tbody>
 
-						</tbody>
-					</table>
+								@foreach($scheidsrechters->wedstrijden as $wedstrijd)
+									<tr>
+										<td>{{$wedstrijd->team1->teamnaam}}</td>
+										<td>{{$wedstrijd->team2->teamnaam}}</td>
+										<td>{{date('d-m-Y', strtotime($wedstrijd->datum))}} {{date('H:i', strtotime($wedstrijd->datum))}}</td>
+										<td>{{$wedstrijd->field->naam}}</td>
+									</tr>
+								@endforeach
+
+							</tbody>
+						</table>
+
+					@else
+						<hr>
+						<p>Geen geplande wedstrijden</p>
+					@endif
 				</div>
 
 
