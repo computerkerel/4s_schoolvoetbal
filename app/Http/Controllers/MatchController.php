@@ -187,6 +187,8 @@ class MatchController extends Controller
             }
         }
 
+        return redirect()->route('wedstrijden.index')
+            ->with('success', 'Competitie succesvol gegenereerd');
 
     }
 
