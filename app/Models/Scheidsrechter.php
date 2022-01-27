@@ -12,7 +12,7 @@ class Scheidsrechter extends Model
 
     public function matches()
     {
-        return $this->hasMany(matchs::class, 'match_id');
+        return $this->hasMany(Match::class, 'match_id');
     }
 
     public function scheidsrechter()

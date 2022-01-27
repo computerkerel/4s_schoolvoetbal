@@ -61,7 +61,6 @@ class ScheidsrechterController extends Controller
     public function show($id)
     {
         $scheidsrechters = User::findOrFail($id);
-
         return view('admin.scheidsrechters.show')
             ->with(compact('scheidsrechters'));
     }

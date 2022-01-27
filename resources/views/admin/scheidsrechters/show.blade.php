@@ -8,7 +8,7 @@
         <div class="container d-flex">
             <div class="w-50">
                 <h2>{{$scheidsrechters->name}}</h2>
-
+                <p>{{$scheidsrechters->wedstrijden}}</p>
 
                 <a href="{{route('scheidsrechters.edit', $scheidsrechters->id)}}" class="btn btn-info">Aanpassen</a>
 
