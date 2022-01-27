@@ -24,6 +24,7 @@
 
 		@auth
 			<div class="d-flex navbar-nav">
+                <a href="{{route("scheidsrechters.show",Auth::user()->id)}}"> <p>{{Auth::user()->name}}</p></a>
 				<form action="{{route('logout')}}" method="POST">
 					@csrf
 					<a href="{{route('logout')}}" class="nav-link" onclick="event.preventDefault();
