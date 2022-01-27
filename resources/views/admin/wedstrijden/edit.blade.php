@@ -85,10 +85,10 @@
 								@isset($wedstrijd->scheidsrechter_id)
 									@if($wedstrijd->scheidsrechter_id == $user->id)
 										<option value="{{$user->id}}" selected>{{$user->name}}</option>
-									@else
-										<option value="{{$user->id}}">{{$user->name}}</option>
-									@endif
-								@endisset
+									@endisset
+								@else
+									<option value="{{$user->id}}">{{$user->name}}</option>
+								@endif
 							@endforeach
 						</select>
 					</div>
@@ -101,10 +101,10 @@
 								@isset($wedstrijd->field->id)
 									@if($wedstrijd->field->id == $field->id)
 										<option value="{{$field->id}}" selected>{{$field->naam}}</option>
-									@else
-										<option value="{{$field->id}}">{{$field->naam}}</option>
-									@endif
-								@endisset
+									@endisset
+								@else
+									<option value="{{$field->id}}">{{$field->naam}}</option>
+								@endif
 							@endforeach
 						</select>
 					</div>
