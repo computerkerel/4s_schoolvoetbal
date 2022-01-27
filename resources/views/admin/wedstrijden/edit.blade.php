@@ -82,11 +82,13 @@
 						<select name="scheidsrechter" id="scheidsrechter" class="form-select">
 							<option value="" selected disabled>-- Scheidsrechter --</option>
 							@foreach($users as $user)
-								@if($wedstrijd->scheidsrechter_id == $user->id)
-									<option value="{{$user->id}}" selected>{{$user->name}}</option>
-								@else
-									<option value="{{$user->id}}">{{$user->name}}</option>
-								@endif
+								@isset($wedstrijd->scheidsrechter_id)
+									@if($wedstrijd->scheidsrechter_id == $user->id)
+										<option value="{{$user->id}}" selected>{{$user->name}}</option>
+									@else
+										<option value="{{$user->id}}">{{$user->name}}</option>
+									@endif
+								@endisset
 							@endforeach
 						</select>
 					</div>
@@ -96,11 +98,13 @@
 						<select name="veld" id="veld" class="form-select">
 							<option value="" selected disabled>-- Veld --</option>
 							@foreach($fields as $field)
-								@if($wedstrijd->field->id == $field->id)
-									<option value="{{$field->id}}" selected>{{$field->naam}}</option>
-								@else
-									<option value="{{$field->id}}">{{$field->naam}}</option>
-								@endif
+								@isset($wedstrijd->field->id)
+									@if($wedstrijd->field->id == $field->id)
+										<option value="{{$field->id}}" selected>{{$field->naam}}</option>
+									@else
+										<option value="{{$field->id}}">{{$field->naam}}</option>
+									@endif
+								@endisset
 							@endforeach
 						</select>
 					</div>
@@ -141,25 +145,28 @@
 				</form>
 			</div>
 
-			@auth()
-				@if(Auth::user()->role == 3)
-					<div class="container w-25">
-						<h2>Veld aanpassen</h2>
-						<form action="{{route('fields.update', $wedstrijd->field->id)}}" class="mx-auto" method="POST">
-							@method('PUT')
-							@csrf
-							<div class="mb-3">
-								<label for="naam" class="form-label">Veldnaam</label>
-								<input type="text" class="form-control" name="naam" id="naam"
-								       value="{{$wedstrijd->field->naam}}">
-							</div>
-							<div class="mb-3">
-								<input type="submit" class="btn btn-primary" value="Opslaan">
-							</div>
-						</form>
-					</div>
-				@endif
-			@endauth
+			@isset($wedstrijd->field)
+				@auth()
+					@if(Auth::user()->role == 3)
+						<div class="container w-25">
+							<h2>Veld aanpassen</h2>
+							<form action="{{route('fields.update', $wedstrijd->field->id)}}" class="mx-auto"
+							      method="POST">
+								@method('PUT')
+								@csrf
+								<div class="mb-3">
+									<label for="naam" class="form-label">Veldnaam</label>
+									<input type="text" class="form-control" name="naam" id="naam"
+									       value="{{$wedstrijd->field->naam}}">
+								</div>
+								<div class="mb-3">
+									<input type="submit" class="btn btn-primary" value="Opslaan">
+								</div>
+							</form>
+						</div>
+					@endif
+				@endauth
+			@endisset
 		</div>
 	</div>
 
