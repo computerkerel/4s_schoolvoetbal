@@ -90,7 +90,7 @@ class ScheidsrechterController extends Controller
     {
 
         $this->validate($request, [
-            'name' => 'required',
+            'name' => 'required|unique:users',
 
         ]);
 

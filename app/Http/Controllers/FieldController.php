@@ -46,7 +46,7 @@ class FieldController extends Controller
 
         $this->validate($request, [
 
-            'naam' => 'required',
+            'naam' => 'required|unique:fields',
         ]);
 
 
@@ -99,7 +99,7 @@ class FieldController extends Controller
 
         $this->validate($request, [
 
-            'naam' => 'required',
+            'naam' => 'required|unique:fields',
         ]);
 
         $fields = Field::findOrFail($id);
