@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +15,26 @@ namespace _4sgokken
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void txbGebruikersNaam_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txbWachtwoord_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnInloggen_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRegistreren_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
