@@ -1,0 +1,11 @@
+C:\xampp\htdocs\4s_schoolvoetbal\4sgokken\4sgokken\bin\Debug\4sgokken.exe.config
+C:\xampp\htdocs\4s_schoolvoetbal\4sgokken\4sgokken\bin\Debug\4sgokken.exe
+C:\xampp\htdocs\4s_schoolvoetbal\4sgokken\4sgokken\bin\Debug\4sgokken.pdb
+C:\xampp\htdocs\4s_schoolvoetbal\4sgokken\4sgokken\obj\Debug\4sgokken.csproj.AssemblyReference.cache
+C:\xampp\htdocs\4s_schoolvoetbal\4sgokken\4sgokken\obj\Debug\4sgokken.csproj.SuggestedBindingRedirects.cache
+C:\xampp\htdocs\4s_schoolvoetbal\4sgokken\4sgokken\obj\Debug\_4sgokken.Form1.resources
+C:\xampp\htdocs\4s_schoolvoetbal\4sgokken\4sgokken\obj\Debug\_4sgokken.Properties.Resources.resources
+C:\xampp\htdocs\4s_schoolvoetbal\4sgokken\4sgokken\obj\Debug\4sgokken.csproj.GenerateResource.cache
+C:\xampp\htdocs\4s_schoolvoetbal\4sgokken\4sgokken\obj\Debug\4sgokken.csproj.CoreCompileInputs.cache
+C:\xampp\htdocs\4s_schoolvoetbal\4sgokken\4sgokken\obj\Debug\4sgokken.exe
+C:\xampp\htdocs\4s_schoolvoetbal\4sgokken\4sgokken\obj\Debug\4sgokken.pdb

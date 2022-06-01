@@ -19,7 +19,7 @@ namespace _4sgokken
 
         private void txbGebruikersNaam_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void txbWachtwoord_TextChanged(object sender, EventArgs e)
@@ -35,6 +35,11 @@ namespace _4sgokken
         private void btnRegistreren_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
