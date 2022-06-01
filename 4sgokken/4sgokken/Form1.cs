@@ -19,7 +19,7 @@ namespace _4sgokken
 
         private void txbGebruikersNaam_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void txbWachtwoord_TextChanged(object sender, EventArgs e)
@@ -29,12 +29,28 @@ namespace _4sgokken
 
         private void btnInloggen_Click(object sender, EventArgs e)
         {
+            if (txbGebruikersNaam.Text == "admin" && txbWachtwoord.Text == "admin")
+            {
+                MessageBox.Show("Welkom!");
+                Form2 form2 = new Form2();
+                form2.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Gebruikersnaam of wachtwoord is incorrect!");
+            }
+            {
+
+            }
 
         }
 
         private void btnRegistreren_Click(object sender, EventArgs e)
         {
-
+               Form3 form3 = new Form3();
+                form3.Show();
+                this.Hide();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
