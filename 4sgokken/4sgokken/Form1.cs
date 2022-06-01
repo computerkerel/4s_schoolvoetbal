@@ -19,12 +19,12 @@ namespace _4sgokken
 
         private void txbGebruikersNaam_TextChanged(object sender, EventArgs e)
         {
-
+            inputGebruikersNaam.Text = txbGebruikersNaam.Text;
         }
 
         private void txbWachtwoord_TextChanged(object sender, EventArgs e)
         {
-
+            inputWaarwoord.Text = txbWachtwoord.Text;
         }
 
         private void btnInloggen_Click(object sender, EventArgs e)
@@ -40,6 +40,7 @@ namespace _4sgokken
             {
                 MessageBox.Show("Gebruikersnaam of wachtwoord is incorrect!");
             }
+
             {
 
             }
