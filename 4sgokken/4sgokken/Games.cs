@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace _4sgokken
 {
-    public partial class Form2 : Form
+    public partial class Games : Form
     {
-        public Form2()
+        public Games()
         {
             InitializeComponent();
         }

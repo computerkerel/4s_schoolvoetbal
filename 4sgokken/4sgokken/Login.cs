@@ -3,16 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace _4sgokken
 {
-    public partial class Form4 : Form
+    public partial class Login : _4sgokken.Form1
     {
-        public Form4()
+        public Login()
         {
             InitializeComponent();
         }
