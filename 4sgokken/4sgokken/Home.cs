@@ -1,3 +1,6 @@
+using _4sgokken.Models;
+using REST_Voetbal.Models;
+using REST_Voetbal.Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,30 +22,53 @@ namespace _4sgokken
 
         private void lblSummary_Click(object sender, EventArgs e)
         {
-            var summaryForm = new SummaryForm();
-            this.Hide();
-            summaryForm.Show(this);
+            //var summaryForm = new SummaryForm();
+            //this.Hide();
+            //summaryForm.Show(this);
         }
 
         private void lblStake_Click(object sender, EventArgs e)
         {
-            var gamesFrom = new GamesForm();
+            var gamesFrom = new Games();
             this.Hide();
-            gamesForm.Show(this);
+            gamesFrom.Show(this);
         }
 
         private void lblLogout_Click(object sender, EventArgs e)
         {
-            var Home = new HomeForm();
+            var home = new Home();
             this.Hide();
-            loginForm.Show(this);
+            home.Show(this);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            var Home = new HomeForm();
+            var home = new Home();
             this.Hide();
-            Home.Show(this);
+            home.Show(this);
+        }
+
+        private async void FetchMatches()
+        {
+            FifaRepository repo = new FifaRepository();
+           // List<MatchModel> matches = await repo.GetMatches();
+
+            List<MatchResult> results = await repo.GetResults();
+
+            //foreach(MatchModel match in matches)
+            //{
+            //    txbDebugMatches.Text += $"{match.Team1Name} vs {match.Team2Name}";
+            //}
+            foreach (MatchResult matchResult in results)
+            {
+                txbDebugMatches.Text += $"{matchResult.Team1Name} vs {matchResult.Team2Name}: {matchResult.Team1Score} - {matchResult.Team2Score}";
+            }
+
+        }
+
+        private void btnTest_Click(object sender, EventArgs e)
+        {
+            FetchMatches();
         }
     }
 }
